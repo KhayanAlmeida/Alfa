@@ -2,12 +2,11 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
     <meta name="description" content="ALFA Soluções Ambientais - Especialistas em recuperação ambiental, reflorestamento, plantio de mudas nativas, roçagem mecanizada e conservação de áreas verdes. Atendemos empresas, condomínios e órgãos públicos.">
     <meta name="keywords" content="recuperação ambiental, reflorestamento, plantio de mudas, roçagem, limpeza de áreas, conservação ambiental">
     <meta name="author" content="ALFA Soluções Ambientais">
     <meta name="theme-color" content="#0B5D3B">
-    <meta name="format-detection" content="telephone=no">
     <title>ALFA Soluções Ambientais | Recuperação e Conservação</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,6 +36,8 @@
             --cinza-claro: #F5F5F5;
             --sombra: 0 20px 35px -10px rgba(0,0,0,0.08);
             --transicao: all 0.3s ease;
+            --header-height-desktop: 120px;
+            --header-height-mobile: 80px;
         }
 
         .container {
@@ -71,15 +72,17 @@
             transform: translateY(0);
         }
 
-        /* Header Responsivo */
+        /* Header Responsivo - CORRIGIDO */
         header {
             position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             width: 100%;
-            background: rgba(255,255,255,0.96);
-            backdrop-filter: blur(8px);
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
             z-index: 1000;
-            box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .navbar {
@@ -94,17 +97,13 @@
         .logo-img {
             height: auto;
             width: auto;
-            max-height: 165px;
+            max-height: 100px;
             max-width: 100%;
             object-fit: contain;
             display: block;
             transition: var(--transicao);
         }
         
-        .logo-img:hover {
-            transform: scale(1.02);
-        }
-
         .logo-container {
             display: flex;
             align-items: center;
@@ -121,7 +120,7 @@
             color: #2D3E3F;
             font-weight: 500;
             transition: 0.2s;
-            font-size: clamp(0.875rem, 2vw, 1rem);
+            font-size: 1rem;
             white-space: nowrap;
         }
         .nav-links a:hover {
@@ -137,9 +136,15 @@
             padding: 8px;
         }
 
+        /* Espaçamento para compensar o header fixo */
+        main {
+            margin-top: 120px;
+        }
+
         section {
             padding: 80px 0;
         }
+        
         .section-title {
             text-align: center;
             font-size: clamp(1.8rem, 5vw, 2.2rem);
@@ -158,7 +163,7 @@
             border-radius: 4px;
         }
 
-        /* Sobre Grid Responsivo */
+        /* Sobre */
         .sobre-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -186,7 +191,7 @@
             transform: scale(1.05);
         }
 
-        /* Cards de Serviços Responsivos */
+        /* Cards */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -202,7 +207,7 @@
             border: 1px solid #eef2e6;
         }
         .service-card:hover {
-            transform: translateY(-12px);
+            transform: translateY(-8px);
             box-shadow: 0 25px 35px -12px rgba(0,0,0,0.15);
             border-color: var(--verde-claro);
         }
@@ -221,7 +226,7 @@
             color: #4b5c4b;
         }
 
-        /* Galeria Responsiva */
+        /* Galeria */
         .galeria-filtros {
             display: flex;
             flex-wrap: wrap;
@@ -315,6 +320,7 @@
             border-radius: 60px;
             color: var(--verde-escuro);
             transition: var(--transicao);
+            display: inline-block;
         }
         .dif-item i:hover {
             background: var(--verde-claro);
@@ -473,17 +479,17 @@
             font-size: 1.4rem;
         }
 
-        main {
-            margin-top: 120px;
-        }
-
-        /* Breakpoints Responsivos */
+        /* ==================== */
+        /* RESPONSIVO - CORREÇÃO CORTE CELULAR */
+        /* ==================== */
+        
+        /* Tablet */
         @media (max-width: 1024px) {
             .logo-img {
-                max-height: 120px;
+                max-height: 90px;
             }
             main {
-                margin-top: 100px;
+                margin-top: 110px;
             }
             .galeria-grid {
                 grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -493,13 +499,15 @@
             }
         }
 
+        /* Celular - CORREÇÃO PRINCIPAL */
         @media (max-width: 900px) {
             .navbar {
                 flex-wrap: wrap;
                 position: relative;
+                padding: 10px 16px;
             }
             .logo-img {
-                max-height: 100px;
+                max-height: 65px;
             }
             .nav-links {
                 display: none;
@@ -513,6 +521,7 @@
                 box-shadow: 0 20px 30px rgba(0,0,0,0.1);
                 text-align: center;
                 gap: 15px;
+                z-index: 1001;
             }
             .nav-links.active {
                 display: flex;
@@ -520,6 +529,7 @@
             .nav-links a {
                 padding: 10px;
                 display: block;
+                font-size: 1rem;
             }
             .menu-mobile {
                 display: block;
@@ -531,36 +541,36 @@
             .contato-grid {
                 grid-template-columns: 1fr;
             }
+            /* Ajuste crítico do margin-top para celular */
             main {
-                margin-top: 90px;
-            }
-            section {
-                padding: 50px 0;
-            }
-            .section-title {
-                margin-bottom: 35px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .logo-img {
-                max-height: 80px;
-            }
-            .navbar {
-                padding: 10px 16px;
-            }
-            main {
-                margin-top: 80px;
-            }
-            .container {
-                padding: 0 16px;
+                margin-top: 85px;
             }
             section {
                 padding: 40px 0;
             }
             .section-title {
-                font-size: 1.6rem;
                 margin-bottom: 30px;
+                font-size: 1.6rem;
+            }
+            .container {
+                padding: 0 16px;
+            }
+        }
+
+        /* Celular pequeno */
+        @media (max-width: 600px) {
+            .logo-img {
+                max-height: 55px;
+            }
+            main {
+                margin-top: 75px;
+            }
+            section {
+                padding: 35px 0;
+            }
+            .section-title {
+                font-size: 1.4rem;
+                margin-bottom: 25px;
             }
             .stats-grid {
                 grid-template-columns: 1fr;
@@ -583,13 +593,22 @@
             .whatsapp-float {
                 bottom: 20px;
                 right: 20px;
+                width: 55px;
+                height: 55px;
+                font-size: 1.8rem;
+            }
+            .sobre-texto {
+                font-size: 0.95rem;
+            }
+            .service-card {
+                padding: 20px 16px;
             }
         }
 
+        /* Muito pequeno */
         @media (max-width: 480px) {
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
+            main {
+                margin-top: 70px;
             }
             .galeria-filtros {
                 gap: 8px;
@@ -598,9 +617,17 @@
                 padding: 6px 14px;
                 font-size: 0.75rem;
             }
+            .contato-grid {
+                border-radius: 32px;
+                padding: 24px;
+            }
+            .info-contato p {
+                margin: 12px 0;
+                font-size: 0.85rem;
+            }
         }
 
-        /* Touch Optimizations */
+        /* Touch devices - sem hover */
         @media (hover: none) and (pointer: coarse) {
             .service-card:hover {
                 transform: none;
@@ -610,6 +637,24 @@
             }
             .btn-primary:active {
                 transform: scale(0.98);
+            }
+            .dif-item i:hover {
+                transform: none;
+            }
+        }
+        
+        /* Primeira seção - correção para não ficar escondida */
+        #sobre {
+            scroll-margin-top: 100px;
+        }
+        @media (max-width: 900px) {
+            #sobre {
+                scroll-margin-top: 80px;
+            }
+        }
+        @media (max-width: 600px) {
+            #sobre {
+                scroll-margin-top: 70px;
             }
         }
     </style>
