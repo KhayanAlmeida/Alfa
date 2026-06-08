@@ -3,13 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-    <meta name="description" content="ALFA Soluções Ambientais - Excelência em recuperação ambiental, reflorestamento e conservação de áreas verdes.">
+    
+    <!-- SEO -->
+    <meta name="description" content="ALFA Soluções Ambientais - Excelência em recuperação ambiental, reflorestamento e conservação de áreas verdes. Atendemos empresas, condomínios e órgãos públicos.">
+    <meta name="keywords" content="recuperação ambiental, reflorestamento, plantio de mudas, roçagem, limpeza de áreas, conservação ambiental">
+    <meta name="author" content="ALFA Soluções Ambientais">
     <meta name="theme-color" content="#0B5D3B">
+    
+    <!-- ========================================== -->
+    <!-- ÍCONES PARA TELA INICIAL DO IPHONE/IPAD -->
+    <!-- ========================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/Y7jXycVP/Chat-GPT-Image-7-de-jun-de-2026-13-56-57.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://i.ibb.co/Y7jXycVP/Chat-GPT-Image-7-de-jun-de-2026-13-56-57.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://i.ibb.co/Y7jXycVP/Chat-GPT-Image-7-de-jun-de-2026-13-56-57.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://i.ibb.co/Y7jXycVP/Chat-GPT-Image-7-de-jun-de-2026-13-56-57.png">
+    
+    <!-- Favicon padrão para desktop -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/Y7jXycVP/Chat-GPT-Image-7-de-jun-de-2026-13-56-57.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://i.ibb.co/Y7jXycVP/Chat-GPT-Image-7-de-jun-de-2026-13-56-57.png">
+    
+    <!-- Título que aparecerá abaixo do ícone na tela inicial -->
+    <meta name="apple-mobile-web-app-title" content="ALFA Ambiental">
+    <meta name="application-name" content="ALFA Ambiental">
+    
+    <!-- Para abrir em tela cheia (modo app) -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
     <title>ALFA Soluções Ambientais | Luxo & Sustentabilidade</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <style>
         * {
             margin: 0;
@@ -182,7 +209,7 @@
             margin-top: 105px;
         }
 
-        /* Hero Section - Background Floresta */
+        /* Hero Section */
         .hero-luxo {
             min-height: 100vh;
             background: linear-gradient(135deg, rgba(10, 26, 18, 0.85) 0%, rgba(10, 26, 18, 0.7) 100%), url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1600&q=100');
@@ -237,7 +264,14 @@
             font-weight: 300;
         }
 
-        /* Seção Sobre - Fundo Madeira/Textura */
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Seção Sobre */
         .sobre-luxo {
             background: linear-gradient(135deg, #0d2218 0%, #08140f 100%);
             position: relative;
@@ -312,7 +346,12 @@
             border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
-        /* Serviços - Fundo Verde Escuro com Textura */
+        .sobre-img-luxo img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Serviços */
         .servicos-luxo {
             background: linear-gradient(135deg, #0a2a1a 0%, #0d1f15 100%);
             position: relative;
@@ -369,10 +408,45 @@
             font-family: 'Cormorant Garamond', serif;
         }
 
-        /* Galeria - Fundo Preto Luxo */
+        .service-card-luxo p {
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+
+        /* Galeria */
         .galeria-luxo {
             background: #050a08;
             position: relative;
+        }
+
+        .galeria-filtros-luxo {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn-luxo {
+            background: transparent;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 8px 24px;
+            border-radius: 40px;
+            cursor: pointer;
+            color: #ccc;
+            transition: 0.3s;
+            font-size: 0.85rem;
+        }
+
+        .filter-btn-luxo.active {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: rgba(212, 175, 55, 0.5);
+            color: white;
+        }
+
+        .filter-btn-luxo:hover {
+            border-color: var(--ouro);
+            color: white;
         }
 
         .galeria-grid-luxo {
@@ -407,7 +481,7 @@
             transform: scale(1.1);
         }
 
-        /* Diferenciais - Fundo com Folhas */
+        /* Diferenciais */
         .diferenciais-luxo {
             background: linear-gradient(135deg, #0d2218 0%, #08140f 100%);
             position: relative;
@@ -440,7 +514,17 @@
             margin-bottom: 20px;
         }
 
-        /* Estatísticas - Fundo Dourado */
+        .dif-card-luxo h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .dif-card-luxo p {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* Estatísticas */
         .stats-luxo {
             background: linear-gradient(135deg, var(--verde-esmeralda) 0%, var(--verde-profundo) 100%);
             position: relative;
@@ -485,7 +569,68 @@
             background: linear-gradient(135deg, #050a08 0%, #0a1a12 100%);
         }
 
-        /* Contato - Fundo Natureza */
+        .carrossel-luxo {
+            max-width: 900px;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carrossel-track-luxo {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .depoimento-luxo {
+            min-width: 100%;
+            padding: 40px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 30px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .depoimento-luxo i {
+            font-size: 2.5rem;
+            color: var(--ouro);
+            opacity: 0.6;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .depoimento-luxo p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .cliente-luxo {
+            color: var(--ouro);
+            font-weight: 600;
+        }
+
+        .controls {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .carrossel-btn-luxo {
+            background: rgba(212, 175, 55, 0.3);
+            border: none;
+            padding: 10px 25px;
+            border-radius: 40px;
+            cursor: pointer;
+            color: white;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+
+        .carrossel-btn-luxo:hover {
+            background: var(--ouro);
+            color: #1a1a1a;
+        }
+
+        /* Contato */
         .contato-luxo {
             background: linear-gradient(135deg, rgba(10, 26, 18, 0.95), rgba(5, 10, 8, 0.98)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=100');
             background-size: cover;
@@ -501,6 +646,19 @@
             border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
+        .contato-grid-luxo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .info-contato-luxo p {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+
         .info-contato-luxo i {
             width: 45px;
             height: 45px;
@@ -513,12 +671,33 @@
             margin-right: 15px;
         }
 
+        .info-contato-luxo a {
+            color: white;
+            text-decoration: none;
+        }
+
         /* Footer */
         .footer-luxo {
             background: #030605;
             border-top: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 50px 0 30px;
         }
 
+        .footer-grid-luxo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .footer-logo-luxo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--ouro);
+        }
+
+        /* WhatsApp Float */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -537,15 +716,19 @@
             transition: 0.3s;
             text-decoration: none;
         }
+
         .whatsapp-float:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
         }
 
+        /* Lightbox */
         .lightbox {
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: rgba(0,0,0,0.95);
             display: flex;
             align-items: center;
@@ -572,6 +755,17 @@
             font-size: 2.5rem;
             color: white;
             cursor: pointer;
+        }
+
+        /* Responsivo */
+        @media (max-width: 1024px) {
+            .contato-grid-luxo {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .sobre-grid-luxo {
+                gap: 40px;
+            }
         }
 
         @media (max-width: 900px) {
@@ -602,7 +796,6 @@
             }
             .sobre-grid-luxo {
                 grid-template-columns: 1fr;
-                gap: 40px;
             }
             main {
                 margin-top: 80px;
@@ -614,13 +807,13 @@
                 padding: 12px 28px;
                 font-size: 0.8rem;
             }
-        }
-
-        @media (max-width: 600px) {
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
+        }
+
+        @media (max-width: 600px) {
             .cards-grid-luxo {
                 grid-template-columns: 1fr;
             }
@@ -632,6 +825,12 @@
             }
             .dif-grid-luxo {
                 gap: 20px;
+            }
+            .section-title-luxo {
+                margin-bottom: 40px;
+            }
+            .depoimento-luxo p {
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -683,7 +882,7 @@
                     <div class="assinatura">— Compromisso com a vida</div>
                 </div>
                 <div class="sobre-img-luxo">
-                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=100" alt="Equipe ALFA" style="width:100%; display:block;">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=100" alt="Equipe ALFA Soluções Ambientais">
                 </div>
             </div>
         </div>
@@ -708,13 +907,13 @@
     <section id="galeria" class="galeria-luxo">
         <div class="container">
             <h2 class="section-title-luxo">Nossa <span>Galeria</span></h2>
-            <div class="galeria-filtros-luxo" style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-bottom:40px;" id="filterButtons">
-                <button class="filter-btn-luxo active" data-filter="all" style="background:rgba(212,175,55,0.2); border:1px solid rgba(212,175,55,0.5); padding:8px 24px; border-radius:40px; cursor:pointer; color:white; transition:0.3s;">Todas</button>
-                <button class="filter-btn-luxo" data-filter="plantio" style="background:transparent; border:1px solid rgba(212,175,55,0.3); padding:8px 24px; border-radius:40px; cursor:pointer; color:#ccc; transition:0.3s;">Plantio</button>
-                <button class="filter-btn-luxo" data-filter="recuperacao" style="background:transparent; border:1px solid rgba(212,175,55,0.3); padding:8px 24px; border-radius:40px; cursor:pointer; color:#ccc; transition:0.3s;">Recuperação</button>
-                <button class="filter-btn-luxo" data-filter="rocagem" style="background:transparent; border:1px solid rgba(212,175,55,0.3); padding:8px 24px; border-radius:40px; cursor:pointer; color:#ccc; transition:0.3s;">Roçagem</button>
-                <button class="filter-btn-luxo" data-filter="limpeza" style="background:transparent; border:1px solid rgba(212,175,55,0.3); padding:8px 24px; border-radius:40px; cursor:pointer; color:#ccc; transition:0.3s;">Limpeza</button>
-                <button class="filter-btn-luxo" data-filter="antesdepois" style="background:transparent; border:1px solid rgba(212,175,55,0.3); padding:8px 24px; border-radius:40px; cursor:pointer; color:#ccc; transition:0.3s;">Antes/Depois</button>
+            <div class="galeria-filtros-luxo" id="filterButtons">
+                <button class="filter-btn-luxo active" data-filter="all">Todas</button>
+                <button class="filter-btn-luxo" data-filter="plantio">Plantio</button>
+                <button class="filter-btn-luxo" data-filter="recuperacao">Recuperação</button>
+                <button class="filter-btn-luxo" data-filter="rocagem">Roçagem</button>
+                <button class="filter-btn-luxo" data-filter="limpeza">Limpeza</button>
+                <button class="filter-btn-luxo" data-filter="antesdepois">Antes/Depois</button>
             </div>
             <div class="galeria-grid-luxo" id="galeriaGrid"></div>
         </div>
@@ -751,15 +950,15 @@
     <section class="depoimentos-luxo">
         <div class="container">
             <h2 class="section-title-luxo">O que dizem <span>nossos clientes</span></h2>
-            <div class="carrossel-luxo" style="max-width:900px; margin:auto; overflow:hidden; position:relative;">
-                <div class="carrossel-track-luxo" id="carrosselTrack" style="display:flex; transition:transform 0.5s ease;">
-                    <div class="depoimento-luxo" style="min-width:100%; padding:40px; background:rgba(255,255,255,0.05); border-radius:30px; text-align:center; border:1px solid rgba(212,175,55,0.3);"><i class="fas fa-quote-right" style="font-size:2.5rem; color:var(--ouro); opacity:0.6; margin-bottom:20px; display:inline-block;"></i><p style="font-size:1.1rem; margin-bottom:20px;">"Excelente trabalho de recuperação ambiental. Profissionais dedicados e resultados impressionantes."</p><div class="cliente-luxo" style="color:var(--ouro); font-weight:600;">— Carlos M.</div></div>
-                    <div class="depoimento-luxo" style="min-width:100%; padding:40px; background:rgba(255,255,255,0.05); border-radius:30px; text-align:center; border:1px solid rgba(212,175,55,0.3);"><i class="fas fa-quote-right" style="font-size:2.5rem; color:var(--ouro); opacity:0.6; margin-bottom:20px; display:inline-block;"></i><p style="font-size:1.1rem; margin-bottom:20px;">"Serviço ágil, eficiente e com ótimo custo-benefício. Recomendo fortemente!"</p><div class="cliente-luxo" style="color:var(--ouro); font-weight:600;">— Sandra R.</div></div>
-                    <div class="depoimento-luxo" style="min-width:100%; padding:40px; background:rgba(255,255,255,0.05); border-radius:30px; text-align:center; border:1px solid rgba(212,175,55,0.3);"><i class="fas fa-quote-right" style="font-size:2.5rem; color:var(--ouro); opacity:0.6; margin-bottom:20px; display:inline-block;"></i><p style="font-size:1.1rem; margin-bottom:20px;">"Comprometimento total com o meio ambiente. Parceiros de confiança para nossa cidade."</p><div class="cliente-luxo" style="color:var(--ouro); font-weight:600;">— Prefeitura</div></div>
+            <div class="carrossel-luxo">
+                <div class="carrossel-track-luxo" id="carrosselTrack">
+                    <div class="depoimento-luxo"><i class="fas fa-quote-right"></i><p>"Excelente trabalho de recuperação ambiental. Profissionais dedicados e resultados impressionantes."</p><div class="cliente-luxo">— Carlos M., Construtora</div></div>
+                    <div class="depoimento-luxo"><i class="fas fa-quote-right"></i><p>"Serviço ágil, eficiente e com ótimo custo-benefício. Recomendo fortemente!"</p><div class="cliente-luxo">— Sandra R., Síndica</div></div>
+                    <div class="depoimento-luxo"><i class="fas fa-quote-right"></i><p>"Comprometimento total com o meio ambiente. Parceiros de confiança para nossa cidade."</p><div class="cliente-luxo">— Prefeitura Municipal</div></div>
                 </div>
-                <div class="controls" style="text-align:center; margin-top:30px;">
-                    <button class="carrossel-btn-luxo" id="prevDepo" style="background:rgba(212,175,55,0.3); border:none; padding:10px 25px; border-radius:40px; cursor:pointer; color:white; margin:0 10px;">◀ Anterior</button>
-                    <button class="carrossel-btn-luxo" id="nextDepo" style="background:rgba(212,175,55,0.3); border:none; padding:10px 25px; border-radius:40px; cursor:pointer; color:white; margin:0 10px;">Próximo ▶</button>
+                <div class="controls">
+                    <button class="carrossel-btn-luxo" id="prevDepo">◀ Anterior</button>
+                    <button class="carrossel-btn-luxo" id="nextDepo">Próximo ▶</button>
                 </div>
             </div>
         </div>
@@ -769,14 +968,15 @@
     <section id="contato" class="contato-luxo">
         <div class="container">
             <div class="contato-card-luxo">
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center;">
+                <div class="contato-grid-luxo">
                     <div>
                         <h3 style="font-family:'Cormorant Garamond', serif; font-size:2rem; color:var(--ouro); margin-bottom:20px;">Vamos conversar?</h3>
                         <p style="margin-bottom:30px;">Entre em contato e solicite um orçamento sem compromisso.</p>
                         <div class="info-contato-luxo">
-                            <p style="margin:20px 0; display:flex; align-items:center;"><i class="fas fa-phone-alt"></i> <a href="tel:5515996626052" style="color:white; text-decoration:none;">(15) 99662-6052</a></p>
-                            <p style="margin:20px 0; display:flex; align-items:center;"><i class="fas fa-envelope"></i> solucoesambientaisalfa@gmail.com</p>
-                            <p style="margin:20px 0; display:flex; align-items:center;"><i class="fas fa-map-marker-alt"></i> Rua Brilhante, 400 - Vale San Fernando, Itapetininga - SP</p>
+                            <p><i class="fas fa-phone-alt"></i> <a href="tel:5515996626052">(15) 99662-6052</a></p>
+                            <p><i class="fas fa-phone-alt"></i> <a href="tel:5515997752938">(15) 99775-2938</a></p>
+                            <p><i class="fas fa-envelope"></i> <a href="mailto:solucoesambientaisalfa@gmail.com">solucoesambientaisalfa@gmail.com</a></p>
+                            <p><i class="fas fa-map-marker-alt"></i> Rua Brilhante, 400 - Vale San Fernando, Itapetininga - SP</p>
                         </div>
                         <a href="https://wa.me/5515996626052" class="btn-luxo" style="display:inline-block; margin-top:20px;">WhatsApp</a>
                     </div>
@@ -791,10 +991,24 @@
 
 <footer class="footer-luxo">
     <div class="container">
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:40px; margin-bottom:40px; text-align:center;">
-            <div><h3 style="font-family:'Cormorant Garamond', serif; font-size:1.8rem; color:var(--ouro);">ALFA</h3><p>Soluções Ambientais</p><p style="margin-top:10px;">Cuidar do presente, preservar o futuro.</p></div>
-            <div><h4 style="color:var(--ouro); margin-bottom:15px;">Menu</h4><p><a href="#home" style="color:#ccc; text-decoration:none;">Início</a> | <a href="#sobre" style="color:#ccc; text-decoration:none;">Sobre</a> | <a href="#servicos" style="color:#ccc; text-decoration:none;">Serviços</a> | <a href="#contato" style="color:#ccc; text-decoration:none;">Contato</a></p></div>
-            <div><h4 style="color:var(--ouro); margin-bottom:15px;">Redes Sociais</h4><div style="display:flex; gap:20px; justify-content:center;"><a href="#" style="color:#ccc; font-size:1.5rem;"><i class="fab fa-instagram"></i></a><a href="#" style="color:#ccc; font-size:1.5rem;"><i class="fab fa-linkedin"></i></a><a href="#" style="color:#ccc; font-size:1.5rem;"><i class="fab fa-facebook"></i></a></div></div>
+        <div class="footer-grid-luxo">
+            <div>
+                <div class="footer-logo-luxo">ALFA</div>
+                <p>Soluções Ambientais</p>
+                <p style="margin-top:10px;">Cuidar do presente, preservar o futuro.</p>
+            </div>
+            <div>
+                <h4 style="color:var(--ouro); margin-bottom:15px;">Menu</h4>
+                <p><a href="#home" style="color:#ccc; text-decoration:none;">Início</a> | <a href="#sobre" style="color:#ccc; text-decoration:none;">Sobre</a> | <a href="#servicos" style="color:#ccc; text-decoration:none;">Serviços</a> | <a href="#galeria" style="color:#ccc; text-decoration:none;">Galeria</a> | <a href="#contato" style="color:#ccc; text-decoration:none;">Contato</a></p>
+            </div>
+            <div>
+                <h4 style="color:var(--ouro); margin-bottom:15px;">Redes Sociais</h4>
+                <div style="display:flex; gap:20px; justify-content:center;">
+                    <a href="#" style="color:#ccc; font-size:1.5rem;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color:#ccc; font-size:1.5rem;"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" style="color:#ccc; font-size:1.5rem;"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
         </div>
         <div style="text-align:center; border-top:1px solid rgba(212,175,55,0.2); padding-top:25px;">© 2026 ALFA Soluções Ambientais. Todos os direitos reservados.</div>
     </div>
@@ -803,6 +1017,7 @@
 <a href="https://wa.me/5515996626052" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <script>
+    // Imagens da Galeria
     const imagensGaleria = [
         { url: 'https://i.ibb.co/jZ69YzJB/Whats-App-Image-2026-06-07-at-17-25-17-1.jpg?format=original&h=2000', cat: 'plantio' },
         { url: 'https://i.ibb.co/DPtJNw6D/Whats-App-Image-2026-06-07-at-17-25-17-2.jpg?format=original&h=2000', cat: 'plantio' },
@@ -841,28 +1056,30 @@
             lb = document.createElement('div'); lb.className = 'lightbox';
             lb.innerHTML = '<span class="close-lightbox">&times;</span><img src="">';
             document.body.appendChild(lb);
-            lb.addEventListener('click', (e) => { if(e.target === lb || e.target.classList.contains('close-lightbox')) lb.classList.remove('active'); });
-            document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && lb.classList.contains('active')) lb.classList.remove('active'); });
+            lb.addEventListener('click', (e) => { 
+                if(e.target === lb || e.target.classList.contains('close-lightbox')) lb.classList.remove('active'); 
+            });
+            document.addEventListener('keydown', (e) => { 
+                if(e.key === 'Escape' && lb.classList.contains('active')) lb.classList.remove('active'); 
+            });
         }
         lb.querySelector('img').src = src;
         lb.classList.add('active');
     }
 
+    // Filtros da Galeria
     document.querySelectorAll('.filter-btn-luxo').forEach(btn => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.filter-btn-luxo').forEach(b => {
-                b.style.background = 'transparent';
-                b.style.color = '#ccc';
-                b.style.borderColor = 'rgba(212,175,55,0.3)';
+                b.classList.remove('active');
             });
-            btn.style.background = 'rgba(212,175,55,0.2)';
-            btn.style.borderColor = 'rgba(212,175,55,0.5)';
-            btn.style.color = 'white';
+            btn.classList.add('active');
             renderGaleria(btn.dataset.filter);
         });
     });
     renderGaleria('all');
 
+    // Contadores Animados
     const counters = document.querySelectorAll('.stat-number-luxo');
     let counted = false;
     const observerStats = new IntersectionObserver((entries) => {
@@ -872,10 +1089,10 @@
                 counters.forEach(counter => {
                     const target = parseInt(counter.dataset.target);
                     let current = 0;
-                    const inc = target / 50;
+                    const increment = target / 50;
                     const update = () => {
                         if(current < target) {
-                            current += inc;
+                            current += increment;
                             counter.innerText = Math.min(Math.ceil(current), target);
                             setTimeout(update, 20);
                         } else {
@@ -887,24 +1104,40 @@
             }
         });
     }, { threshold: 0.5 });
-    observerStats.observe(document.querySelector('.stats-luxo'));
+    if(document.querySelector('.stats-luxo')) observerStats.observe(document.querySelector('.stats-luxo'));
 
+    // Carrossel de Depoimentos
     let currentIdx = 0;
     const track = document.getElementById('carrosselTrack');
     const depoimentos = document.querySelectorAll('.depoimento-luxo');
     const total = depoimentos.length;
-    function updateCarrossel() { if(track) track.style.transform = `translateX(-${currentIdx * 100}%)`; }
-    document.getElementById('nextDepo')?.addEventListener('click', () => { currentIdx = (currentIdx + 1) % total; updateCarrossel(); });
-    document.getElementById('prevDepo')?.addEventListener('click', () => { currentIdx = (currentIdx - 1 + total) % total; updateCarrossel(); });
+    function updateCarrossel() { 
+        if(track) track.style.transform = `translateX(-${currentIdx * 100}%)`; 
+    }
+    document.getElementById('nextDepo')?.addEventListener('click', () => { 
+        currentIdx = (currentIdx + 1) % total; 
+        updateCarrossel(); 
+    });
+    document.getElementById('prevDepo')?.addEventListener('click', () => { 
+        currentIdx = (currentIdx - 1 + total) % total; 
+        updateCarrossel(); 
+    });
 
+    // Menu Mobile
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
-    if(menuToggle) menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+    if(menuToggle) {
+        menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+    }
+    
+    // Scroll Suave
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
-            if(target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if(target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
             if(navLinks.classList.contains('active')) navLinks.classList.remove('active');
         });
     });
