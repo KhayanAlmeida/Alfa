@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-    <meta name="description" content="ALFA Soluções Ambientais - Especialistas em recuperação ambiental, reflorestamento, plantio de mudas nativas, roçagem mecanizada e conservação de áreas verdes. Atendemos empresas, condomínios e órgãos públicos.">
+    <meta name="description" content="ALFA Soluções Ambientais - Especialistas em recuperação ambiental, reflorestamento, plantio de mudas nativas, roçagem mecanizada e conservação de áreas verdes.">
     <meta name="keywords" content="recuperação ambiental, reflorestamento, plantio de mudas, roçagem, limpeza de áreas, conservação ambiental">
     <meta name="author" content="ALFA Soluções Ambientais">
     <meta name="theme-color" content="#0B5D3B">
-    <title>ALFA Soluções Ambientais | Recuperação e Conservação</title>
+    <title>ALFA Soluções Ambientais | Design Premium</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -20,24 +20,24 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #FFFFFF;
-            color: #1E2A2E;
+            color: #1a1a2e;
             overflow-x: hidden;
             scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         :root {
             --verde-escuro: #0B5D3B;
             --verde-claro: #6FAF45;
+            --verde-gradient: linear-gradient(135deg, #0B5D3B 0%, #1a8f5a 100%);
             --branco: #FFFFFF;
-            --cinza-claro: #F5F5F5;
-            --sombra: 0 20px 35px -10px rgba(0,0,0,0.08);
-            --transicao: all 0.3s ease;
-            --header-height-desktop: 120px;
-            --header-height-mobile: 80px;
+            --cinza-claro: #F8F9FA;
+            --cinza-medio: #E9ECEF;
+            --dourado: #D4AF37;
+            --sombra: 0 20px 40px -15px rgba(0,0,0,0.1);
+            --sombra-forte: 0 30px 50px -20px rgba(0,0,0,0.15);
+            --transicao: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .container {
@@ -47,81 +47,122 @@
             padding: 0 24px;
         }
 
+        /* Botões Premium */
         .btn-primary {
-            background-color: var(--verde-escuro);
+            background: var(--verde-gradient);
             color: white;
-            padding: 14px 32px;
-            border-radius: 40px;
-            font-weight: 600;
+            padding: 16px 38px;
+            border-radius: 50px;
+            font-weight: 700;
             text-decoration: none;
             display: inline-block;
             transition: var(--transicao);
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(11, 93, 59, 0.2);
-            text-align: center;
+            box-shadow: 0 8px 20px rgba(11, 93, 59, 0.3);
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+            z-index: -1;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
         }
 
         .btn-primary:hover {
-            background-color: #09482f;
             transform: translateY(-3px);
-            box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 12px 28px rgba(11, 93, 59, 0.4);
         }
 
-        .btn-primary:active {
-            transform: translateY(0);
+        .btn-secondary {
+            background: transparent;
+            color: var(--verde-escuro);
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid var(--verde-escuro);
+            transition: var(--transicao);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
         }
 
-        /* Header Responsivo - CORRIGIDO */
+        .btn-secondary:hover {
+            background: var(--verde-escuro);
+            color: white;
+            transform: translateY(-3px);
+            border-color: var(--verde-escuro);
+        }
+
+        /* Header Premium */
         header {
             position: fixed;
             top: 0;
-            left: 0;
-            right: 0;
             width: 100%;
             background: rgba(255,255,255,0.98);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: var(--transicao);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 24px;
+            padding: 16px 24px;
             max-width: 1400px;
             margin: 0 auto;
         }
 
         .logo-img {
             height: auto;
+            max-height: 80px;
             width: auto;
-            max-height: 100px;
-            max-width: 100%;
             object-fit: contain;
-            display: block;
             transition: var(--transicao);
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            flex-shrink: 0;
         }
 
         .nav-links {
             display: flex;
-            gap: 28px;
+            gap: 40px;
             list-style: none;
         }
         .nav-links a {
             text-decoration: none;
-            color: #2D3E3F;
-            font-weight: 500;
-            transition: 0.2s;
+            color: #2d2d3a;
+            font-weight: 600;
+            transition: 0.3s;
             font-size: 1rem;
-            white-space: nowrap;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--verde-claro);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
         }
         .nav-links a:hover {
             color: var(--verde-escuro);
@@ -133,381 +174,512 @@
             color: var(--verde-escuro);
             background: none;
             border: none;
-            padding: 8px;
         }
 
-        /* Espaçamento para compensar o header fixo */
         main {
-            margin-top: 120px;
+            margin-top: 112px;
         }
 
-        section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: clamp(1.8rem, 5vw, 2.2rem);
-            margin-bottom: 50px;
-            color: var(--verde-escuro);
-            font-weight: 700;
+        /* Hero Section Premium */
+        .hero-premium {
+            min-height: 90vh;
+            background: linear-gradient(135deg, rgba(11,93,59,0.92) 0%, rgba(31,64,55,0.88) 100%), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1600&q=100');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
             position: relative;
+            overflow: hidden;
         }
-        .section-title:after {
+
+        .hero-premium::before {
             content: '';
-            width: 70px;
-            height: 3px;
-            background: var(--verde-claro);
-            display: block;
-            margin: 12px auto 0;
-            border-radius: 4px;
-        }
-
-        /* Sobre */
-        .sobre-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        .sobre-texto {
-            font-size: clamp(1rem, 2.5vw, 1.1rem);
-            line-height: 1.6;
-            color: #2c3e2f;
-        }
-        .sobre-img {
-            position: relative;
-            border-radius: 32px;
-            overflow: hidden;
-            box-shadow: var(--sombra);
-        }
-        .sobre-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-        .sobre-img:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Cards */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-        }
-        .service-card {
-            background: var(--branco);
-            border-radius: 24px;
-            padding: clamp(24px, 4vw, 32px) clamp(16px, 3vw, 20px);
-            text-align: center;
-            transition: 0.3s;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-            border: 1px solid #eef2e6;
-        }
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 35px -12px rgba(0,0,0,0.15);
-            border-color: var(--verde-claro);
-        }
-        .service-card i {
-            font-size: clamp(2.5rem, 6vw, 3rem);
-            color: var(--verde-claro);
-            margin-bottom: 20px;
-        }
-        .service-card h3 {
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
-            margin-bottom: 12px;
-            color: var(--verde-escuro);
-        }
-        .service-card p {
-            font-size: clamp(0.875rem, 2vw, 1rem);
-            color: #4b5c4b;
-        }
-
-        /* Galeria */
-        .galeria-filtros {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 40px;
-        }
-        .filter-btn {
-            background: var(--cinza-claro);
-            border: none;
-            padding: 8px 20px;
-            border-radius: 40px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: 0.2s;
-            font-size: clamp(0.75rem, 2vw, 0.9rem);
-        }
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--verde-escuro);
-            color: white;
-        }
-        .galeria-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 24px;
-        }
-        .gallery-item {
-            overflow: hidden;
-            border-radius: 20px;
-            cursor: pointer;
-            position: relative;
-            aspect-ratio: 4 / 3;
-            box-shadow: 0 5px 12px rgba(0,0,0,0.08);
-            background: var(--cinza-claro);
-        }
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.4s ease;
-        }
-        .gallery-item:hover img {
-            transform: scale(1.08);
-        }
-
-        /* Lightbox */
-        .lightbox {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.95);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            visibility: hidden;
-            opacity: 0;
-            transition: 0.3s;
-        }
-        .lightbox.active {
-            visibility: visible;
-            opacity: 1;
-        }
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 8px;
-            object-fit: contain;
-        }
-        .close-lightbox {
             position: absolute;
-            top: 25px;
-            right: 35px;
-            font-size: 2.5rem;
-            color: white;
-            cursor: pointer;
-            z-index: 2001;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+            background-size: 40px 40px;
+            animation: moveDots 20s linear infinite;
         }
 
-        /* Diferenciais */
-        .dif-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 30px;
-            text-align: center;
+        @keyframes moveDots {
+            from { transform: translate(0, 0); }
+            to { transform: translate(40px, 40px); }
         }
-        .dif-item i {
-            font-size: clamp(2rem, 5vw, 2.8rem);
-            background: var(--cinza-claro);
-            padding: 20px;
-            border-radius: 60px;
-            color: var(--verde-escuro);
-            transition: var(--transicao);
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .hero-badge {
             display: inline-block;
-        }
-        .dif-item i:hover {
-            background: var(--verde-claro);
-            color: white;
-            transform: translateY(-5px);
-        }
-        .dif-item h4 {
-            margin-top: 15px;
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
-            color: var(--verde-escuro);
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
         }
 
-        /* Estatísticas */
-        .stats-bg {
-            background: var(--verde-escuro);
-            color: white;
-            text-align: center;
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-        .stat-number {
-            font-size: clamp(2rem, 6vw, 3rem);
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
             font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
-        .stat-label {
-            font-size: clamp(0.75rem, 2vw, 1rem);
-            margin-top: 8px;
+
+        .hero-content p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin-bottom: 40px;
             opacity: 0.95;
         }
 
-        /* Carrossel */
-        .carrossel-container {
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Seções com design elegante */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title-premium {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            margin-bottom: 60px;
+            color: var(--verde-escuro);
+            font-weight: 800;
+            position: relative;
+        }
+
+        .section-title-premium span {
+            color: var(--verde-claro);
+            position: relative;
+        }
+
+        .section-title-premium::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--verde-gradient);
+            display: block;
+            margin: 20px auto 0;
+            border-radius: 4px;
+        }
+
+        /* Cards de Serviços Modernos */
+        .cards-grid-premium {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .service-card-premium {
+            background: white;
+            border-radius: 28px;
+            padding: 40px 28px;
+            text-align: center;
+            transition: var(--transicao);
+            box-shadow: var(--sombra);
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .service-card-premium::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 0;
+            background: var(--verde-gradient);
+            transition: height 0.4s ease;
+            z-index: -1;
+            border-radius: 28px;
+        }
+
+        .service-card-premium:hover::before {
+            height: 100%;
+        }
+
+        .service-card-premium:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--sombra-forte);
+        }
+
+        .service-card-premium:hover i,
+        .service-card-premium:hover h3,
+        .service-card-premium:hover p {
+            color: white;
+        }
+
+        .service-card-premium i {
+            font-size: 3.5rem;
+            color: var(--verde-claro);
+            margin-bottom: 25px;
+            transition: var(--transicao);
+        }
+
+        .service-card-premium h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--verde-escuro);
+            transition: var(--transicao);
+        }
+
+        .service-card-premium p {
+            color: #5a5a6e;
+            line-height: 1.6;
+            transition: var(--transicao);
+        }
+
+        /* Sobre Grid Moderno */
+        .sobre-grid-premium {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .sobre-texto-premium {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #2d2d3a;
+        }
+
+        .sobre-texto-premium h3 {
+            font-size: 1.8rem;
+            color: var(--verde-escuro);
+            margin-bottom: 20px;
+        }
+
+        .sobre-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number-premium {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--verde-escuro);
+        }
+
+        .sobre-img-premium {
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: var(--sombra-forte);
+            position: relative;
+        }
+
+        .sobre-img-premium img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transicao);
+        }
+
+        .sobre-img-premium:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Galeria Premium */
+        .galeria-premium {
+            background: var(--cinza-claro);
+        }
+
+        .galeria-filtros-premium {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+
+        .filter-btn-premium {
+            background: white;
+            border: none;
+            padding: 10px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .filter-btn-premium.active, .filter-btn-premium:hover {
+            background: var(--verde-escuro);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .galeria-grid-premium {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item-premium {
+            overflow: hidden;
+            border-radius: 24px;
+            cursor: pointer;
+            position: relative;
+            aspect-ratio: 4 / 3;
+            box-shadow: var(--sombra);
+            transition: var(--transicao);
+        }
+
+        .gallery-item-premium img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transicao);
+        }
+
+        .gallery-item-premium:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item-premium:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            padding: 20px;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .gallery-item-premium:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Diferenciais com ícones modernos */
+        .dif-grid-premium {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .dif-card-premium {
+            background: var(--cinza-claro);
+            padding: 35px 20px;
+            border-radius: 30px;
+            transition: var(--transicao);
+        }
+
+        .dif-card-premium:hover {
+            transform: translateY(-8px);
+            background: white;
+            box-shadow: var(--sombra);
+        }
+
+        .dif-card-premium i {
+            font-size: 3rem;
+            background: var(--verde-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .dif-card-premium h4 {
+            font-size: 1.2rem;
+            color: var(--verde-escuro);
+            margin-bottom: 10px;
+        }
+
+        /* Estatísticas Impactantes */
+        .stats-premium {
+            background: var(--verde-gradient);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-premium::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        .stats-grid-premium {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-card-premium {
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 30px;
+            transition: var(--transicao);
+        }
+
+        .stat-card-premium:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .stat-number-premium {
+            font-size: 3.5rem;
+            font-weight: 800;
+        }
+
+        /* Carrossel Premium */
+        .carrossel-premium {
             position: relative;
             max-width: 900px;
             margin: auto;
             overflow: hidden;
         }
-        .carrossel-track {
+
+        .carrossel-track-premium {
             display: flex;
             transition: transform 0.5s ease;
         }
-        .depoimento {
+
+        .depoimento-premium {
             min-width: 100%;
-            padding: clamp(20px, 5vw, 30px);
-            background: var(--cinza-claro);
-            border-radius: 32px;
+            padding: 40px;
+            background: white;
+            border-radius: 40px;
             text-align: center;
-            font-style: italic;
+            box-shadow: var(--sombra);
+            border: 1px solid rgba(0,0,0,0.05);
         }
-        .depoimento p {
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+
+        .depoimento-premium i {
+            font-size: 3rem;
+            color: var(--verde-claro);
+            opacity: 0.5;
+            margin-bottom: 20px;
         }
-        .cliente {
-            margin-top: 16px;
+
+        .cliente-premium {
+            margin-top: 20px;
             font-weight: 700;
             color: var(--verde-escuro);
         }
-        .carrossel-btn {
-            background: var(--verde-claro);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 40px;
-            cursor: pointer;
-            margin: 20px 10px 0;
-            font-weight: bold;
-            transition: var(--transicao);
-        }
-        .carrossel-btn:hover {
+
+        .carrossel-btn-premium {
             background: var(--verde-escuro);
             color: white;
-        }
-        .controls {
-            text-align: center;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 20px 10px 0;
+            font-weight: 600;
+            transition: var(--transicao);
         }
 
-        /* Contato */
-        .contato-grid {
+        /* Contato Premium */
+        .contato-premium {
+            background: linear-gradient(135deg, var(--cinza-claro) 0%, white 100%);
+            border-radius: 60px;
+            padding: 60px;
+        }
+
+        .contato-grid-premium {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            background: var(--cinza-claro);
-            border-radius: 48px;
-            padding: clamp(24px, 5vw, 48px);
-        }
-        .info-contato i {
-            width: 40px;
-            color: var(--verde-escuro);
-            font-size: 1.4rem;
-        }
-        .info-contato p {
-            margin: 18px 0;
-            display: flex;
-            gap: 14px;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
             align-items: center;
-            font-size: clamp(0.875rem, 2vw, 1rem);
-            word-break: break-word;
-        }
-        .info-contato a {
-            color: inherit;
-            text-decoration: none;
         }
 
-        /* WhatsApp Float */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25D366;
-            width: clamp(50px, 10vw, 60px);
-            height: clamp(50px, 10vw, 60px);
+        .info-contato-premium i {
+            width: 45px;
+            height: 45px;
+            background: var(--verde-gradient);
             border-radius: 50%;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: clamp(1.5rem, 4vw, 2rem);
             color: white;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            z-index: 99;
-            transition: 0.2s;
-            text-decoration: none;
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background: #20b859;
+            margin-right: 15px;
         }
 
-        /* Footer */
-        footer {
-            background: #0F2F22;
-            color: #ddd;
-            padding: 50px 0 30px;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        footer a {
-            color: #ccc;
-            text-decoration: none;
-            transition: 0.2s;
-        }
-        footer a:hover {
-            color: var(--verde-claro);
-        }
-        .social-icons {
-            margin-top: 15px;
-        }
-        .social-icons a {
-            margin: 0 10px;
-            font-size: 1.4rem;
+        .info-contato-premium p {
+            margin: 25px 0;
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
         }
 
-        /* ==================== */
-        /* RESPONSIVO - CORREÇÃO CORTE CELULAR */
-        /* ==================== */
-        
-        /* Tablet */
+        /* Footer Premium */
+        .footer-premium {
+            background: #0a1a12;
+            color: #aaa;
+            padding: 60px 0 30px;
+        }
+
+        .footer-logo-premium {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, var(--verde-claro));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+        }
+
+        /* Responsivo */
         @media (max-width: 1024px) {
-            .logo-img {
-                max-height: 90px;
-            }
             main {
-                margin-top: 110px;
-            }
-            .galeria-grid {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                margin-top: 90px;
             }
             section {
-                padding: 60px 0;
+                padding: 70px 0;
+            }
+            .contato-premium {
+                padding: 40px;
             }
         }
 
-        /* Celular - CORREÇÃO PRINCIPAL */
         @media (max-width: 900px) {
             .navbar {
-                flex-wrap: wrap;
-                position: relative;
-                padding: 10px 16px;
+                padding: 12px 20px;
             }
             .logo-img {
-                max-height: 65px;
+                max-height: 55px;
             }
             .nav-links {
                 display: none;
@@ -517,145 +689,72 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                padding: 20px;
+                padding: 25px;
                 box-shadow: 0 20px 30px rgba(0,0,0,0.1);
                 text-align: center;
-                gap: 15px;
-                z-index: 1001;
+                gap: 20px;
             }
             .nav-links.active {
                 display: flex;
             }
-            .nav-links a {
-                padding: 10px;
-                display: block;
-                font-size: 1rem;
-            }
             .menu-mobile {
                 display: block;
             }
-            .sobre-grid {
+            .sobre-grid-premium, .contato-grid-premium {
                 grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            .contato-grid {
-                grid-template-columns: 1fr;
-            }
-            /* Ajuste crítico do margin-top para celular */
-            main {
-                margin-top: 85px;
-            }
-            section {
-                padding: 40px 0;
-            }
-            .section-title {
-                margin-bottom: 30px;
-                font-size: 1.6rem;
-            }
-            .container {
-                padding: 0 16px;
-            }
-        }
-
-        /* Celular pequeno */
-        @media (max-width: 600px) {
-            .logo-img {
-                max-height: 55px;
             }
             main {
                 margin-top: 75px;
             }
             section {
-                padding: 35px 0;
+                padding: 50px 0;
             }
-            .section-title {
-                font-size: 1.4rem;
-                margin-bottom: 25px;
+            .contato-premium {
+                padding: 30px;
+                border-radius: 40px;
             }
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-            .galeria-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-            .cards-grid {
-                gap: 20px;
-            }
-            .dif-grid {
-                gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
             }
             .btn-primary, .btn-secondary {
-                padding: 12px 24px;
+                padding: 12px 28px;
                 font-size: 0.9rem;
             }
-            .whatsapp-float {
-                bottom: 20px;
-                right: 20px;
-                width: 55px;
-                height: 55px;
-                font-size: 1.8rem;
+            .cards-grid-premium {
+                grid-template-columns: 1fr;
             }
-            .sobre-texto {
-                font-size: 0.95rem;
+            .galeria-grid-premium {
+                grid-template-columns: 1fr;
             }
-            .service-card {
-                padding: 20px 16px;
+            .stats-grid-premium {
+                grid-template-columns: 1fr;
             }
         }
 
-        /* Muito pequeno */
-        @media (max-width: 480px) {
-            main {
-                margin-top: 70px;
-            }
-            .galeria-filtros {
-                gap: 8px;
-            }
-            .filter-btn {
-                padding: 6px 14px;
-                font-size: 0.75rem;
-            }
-            .contato-grid {
-                border-radius: 32px;
-                padding: 24px;
-            }
-            .info-contato p {
-                margin: 12px 0;
-                font-size: 0.85rem;
-            }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            z-index: 99;
+            transition: 0.2s;
+            text-decoration: none;
         }
-
-        /* Touch devices - sem hover */
-        @media (hover: none) and (pointer: coarse) {
-            .service-card:hover {
-                transform: none;
-            }
-            .gallery-item:hover img {
-                transform: none;
-            }
-            .btn-primary:active {
-                transform: scale(0.98);
-            }
-            .dif-item i:hover {
-                transform: none;
-            }
-        }
-        
-        /* Primeira seção - correção para não ficar escondida */
-        #sobre {
-            scroll-margin-top: 100px;
-        }
-        @media (max-width: 900px) {
-            #sobre {
-                scroll-margin-top: 80px;
-            }
-        }
-        @media (max-width: 600px) {
-            #sobre {
-                scroll-margin-top: 70px;
-            }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -666,9 +765,9 @@
         <div class="logo-container">
             <img class="logo-img" src="https://i.ibb.co/Y7jXycVP/Chat-GPT-Image-7-de-jun-de-2026-13-56-57.png" alt="ALFA Soluções Ambientais">
         </div>
-        <button class="menu-mobile" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+        <button class="menu-mobile" id="menuToggle"><i class="fas fa-bars"></i></button>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#sobre">Início</a></li>
+            <li><a href="#home">Início</a></li>
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#servicos">Serviços</a></li>
             <li><a href="#galeria">Galeria</a></li>
@@ -678,110 +777,161 @@
 </header>
 
 <main>
-    <section id="sobre" class="container">
-        <h2 class="section-title">Quem Somos</h2>
-        <div class="sobre-grid">
-            <div class="sobre-texto">
-                <p>A ALFA Soluções Ambientais atua no desenvolvimento de soluções sustentáveis para conservação, recuperação e manutenção de áreas verdes. Nossa equipe trabalha com comprometimento, qualidade e responsabilidade ambiental, garantindo resultados eficientes para cada projeto.</p>
-                <br>
-                <p>Com anos de experiência, atendemos desde pequenas propriedades até grandes indústrias e órgãos públicos, sempre alinhados ao mais alto padrão técnico e ecológico.</p>
-                <br>
-                <a href="https://wa.me/5515996626052" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top: 20px; display: inline-block;">Solicitar Orçamento</a>
-            </div>
-            <div class="sobre-img">
-                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1200&q=100" alt="Equipe ALFA Soluções Ambientais" loading="lazy">
-            </div>
-        </div>
-    </section>
-
-    <section id="servicos" class="container">
-        <h2 class="section-title">Nossos Serviços</h2>
-        <div class="cards-grid">
-            <div class="service-card"><i class="fas fa-seedling"></i><h3>Plantio de Mudas Nativas</h3><p>Recuperação de matas ciliares e reservas legais.</p></div>
-            <div class="service-card"><i class="fas fa-leaf"></i><h3>Recuperação Ambiental</h3><p>Projetos completos de restauração ecológica.</p></div>
-            <div class="service-card"><i class="fas fa-tree"></i><h3>Reflorestamento</h3><p>Planejamento de florestas sustentáveis.</p></div>
-            <div class="service-card"><i class="fas fa-tractor"></i><h3>Roçagem Mecanizada</h3><p>Limpeza de faixas, aceiros e manutenção.</p></div>
-            <div class="service-card"><i class="fas fa-brush"></i><h3>Limpeza de Áreas</h3><p>Remoção de resíduos, poda e manejo.</p></div>
-            <div class="service-card"><i class="fas fa-water"></i><h3>Conservação de Áreas Verdes</h3><p>Manutenção de parques e jardins.</p></div>
-        </div>
-    </section>
-
-    <section id="galeria" style="background: var(--cinza-claro);">
+    <!-- Hero Premium -->
+    <section id="home" class="hero-premium">
         <div class="container">
-            <h2 class="section-title">Galeria Ambiental</h2>
-            <div class="galeria-filtros" id="filterButtons">
-                <button class="filter-btn active" data-filter="all">Todas</button>
-                <button class="filter-btn" data-filter="plantio">Plantio</button>
-                <button class="filter-btn" data-filter="recuperacao">Recuperação</button>
-                <button class="filter-btn" data-filter="rocagem">Roçagem</button>
-                <button class="filter-btn" data-filter="limpeza">Limpeza</button>
-                <button class="filter-btn" data-filter="antesdepois">Antes/Depois</button>
-            </div>
-            <div class="galeria-grid" id="galeriaGrid"></div>
-        </div>
-    </section>
-
-    <section class="container">
-        <h2 class="section-title">Nossos Diferenciais</h2>
-        <div class="dif-grid">
-            <div class="dif-item"><i class="fas fa-users"></i><h4>Equipe Qualificada</h4></div>
-            <div class="dif-item"><i class="fas fa-user-check"></i><h4>Atendimento Personalizado</h4></div>
-            <div class="dif-item"><i class="fas fa-globe-americas"></i><h4>Compromisso Ambiental</h4></div>
-            <div class="dif-item"><i class="fas fa-hard-hat"></i><h4>Segurança Operacional</h4></div>
-            <div class="dif-item"><i class="fas fa-chart-line"></i><h4>Relatórios Técnicos</h4></div>
-            <div class="dif-item"><i class="fas fa-medal"></i><h4>Execução com Qualidade</h4></div>
-        </div>
-    </section>
-
-    <section class="stats-bg">
-        <div class="container stats-grid">
-            <div><div class="stat-number" data-target="100" data-suffix="k">0</div><div class="stat-label">Milhares de Mudas</div></div>
-            <div><div class="stat-number" data-target="18" data-suffix="mil">0</div><div class="stat-label">mil m² Áreas Recuperadas</div></div>
-            <div><div class="stat-number" data-target="1000" data-suffix="">0</div><div class="stat-label">Horas de Serviços</div></div>
-            <div><div class="stat-number" data-target="100" data-suffix="%">0</div><div class="stat-label">Compromisso Ambiental</div></div>
-        </div>
-    </section>
-
-    <section class="container">
-        <h2 class="section-title">Depoimentos</h2>
-        <div class="carrossel-container">
-            <div class="carrossel-track" id="carrosselTrack">
-                <div class="depoimento"><p>"Excelente trabalho de recuperação ambiental. Profissionais dedicados."</p><div class="cliente">— Carlos M.</div></div>
-                <div class="depoimento"><p>"Serviço ágil e eficiente. Recomendo para condomínios."</p><div class="cliente">— Sandra R.</div></div>
-                <div class="depoimento"><p>"Comprometimento total com o meio ambiente. Parceiros de confiança."</p><div class="cliente">— Prefeitura</div></div>
-            </div>
-            <div class="controls"><button class="carrossel-btn" id="prevDepo">◀</button><button class="carrossel-btn" id="nextDepo">▶</button></div>
-        </div>
-    </section>
-
-    <section id="contato" class="container">
-        <div class="contato-grid">
-            <div>
-                <h3 style="color: var(--verde-escuro); margin-bottom: 20px;">Entre em contato</h3>
-                <div class="info-contato">
-                    <p><i class="fas fa-phone-alt"></i> <a href="tel:5515996626052">(15) 99662-6052</a></p>
-                    <p><i class="fas fa-phone-alt"></i> <a href="tel:5515997752938">(15) 99775-2938</a></p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:solucoesambientaisalfa@gmail.com">solucoesambientaisalfa@gmail.com</a></p>
-                    <p><i class="fas fa-map-marker-alt"></i> Rua Brilhante, 400 - Vale San Fernando, Itapetininga - SP</p>
+            <div class="hero-content">
+                <div class="hero-badge">✦ 15+ anos de excelência ✦</div>
+                <h1>Recuperação Ambiental e<br><span style="color: var(--verde-claro);">Conservação de Áreas</span></h1>
+                <p>Soluções completas em recuperação ambiental, reflorestamento, plantio de mudas nativas, roçagem e manutenção de áreas verdes.</p>
+                <div class="hero-buttons">
+                    <a href="#contato" class="btn-primary">Solicitar Orçamento</a>
+                    <a href="#servicos" class="btn-secondary">Nossos Serviços</a>
                 </div>
             </div>
-            <div style="background: white; border-radius: 24px; padding: 20px;">
-                <iframe src="https://www.google.com/maps?q=-23.608811,-48.015204&z=17&output=embed" width="100%" height="280" style="border:0; border-radius: 16px;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- Sobre Premium -->
+    <section id="sobre">
+        <div class="container">
+            <h2 class="section-title-premium">Quem <span>Somos</span></h2>
+            <div class="sobre-grid-premium">
+                <div class="sobre-texto-premium">
+                    <h3>Cuidar do presente, preservar o futuro.</h3>
+                    <p>A ALFA Soluções Ambientais atua no desenvolvimento de soluções sustentáveis para conservação, recuperação e manutenção de áreas verdes. Nossa equipe trabalha com comprometimento, qualidade e responsabilidade ambiental, garantindo resultados eficientes para cada projeto.</p>
+                    <br>
+                    <p>Com anos de experiência, atendemos desde pequenas propriedades até grandes indústrias e órgãos públicos, sempre alinhados ao mais alto padrão técnico e ecológico.</p>
+                    <div class="sobre-stats">
+                        <div class="stat-item">
+                            <div class="stat-number-premium">100+</div>
+                            <div>Projetos</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number-premium">50+</div>
+                            <div>Clientes</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number-premium">10+</div>
+                            <div>Anos</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sobre-img-premium">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=100" alt="Equipe ALFA">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Premium -->
+    <section id="servicos" style="background: var(--cinza-claro);">
+        <div class="container">
+            <h2 class="section-title-premium">Nossos <span>Serviços</span></h2>
+            <div class="cards-grid-premium">
+                <div class="service-card-premium"><i class="fas fa-seedling"></i><h3>Plantio de Mudas Nativas</h3><p>Recuperação de matas ciliares e reservas legais com espécies nativas.</p></div>
+                <div class="service-card-premium"><i class="fas fa-leaf"></i><h3>Recuperação Ambiental</h3><p>Projetos completos de restauração ecológica de áreas degradadas.</p></div>
+                <div class="service-card-premium"><i class="fas fa-tree"></i><h3>Reflorestamento</h3><p>Planejamento e execução de florestas para conservação e sustentabilidade.</p></div>
+                <div class="service-card-premium"><i class="fas fa-tractor"></i><h3>Roçagem Mecanizada</h3><p>Limpeza de faixas, aceiros e manutenção com equipamentos modernos.</p></div>
+                <div class="service-card-premium"><i class="fas fa-brush"></i><h3>Limpeza de Áreas</h3><p>Remoção de resíduos, poda e manejo de vegetação invasora.</p></div>
+                <div class="service-card-premium"><i class="fas fa-water"></i><h3>Conservação de Áreas Verdes</h3><p>Manutenção preventiva e corretiva de parques e jardins.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria Premium -->
+    <section id="galeria" class="galeria-premium">
+        <div class="container">
+            <h2 class="section-title-premium">Nossa <span>Galeria</span></h2>
+            <div class="galeria-filtros-premium" id="filterButtons">
+                <button class="filter-btn-premium active" data-filter="all">Todas</button>
+                <button class="filter-btn-premium" data-filter="plantio">Plantio</button>
+                <button class="filter-btn-premium" data-filter="recuperacao">Recuperação</button>
+                <button class="filter-btn-premium" data-filter="rocagem">Roçagem</button>
+                <button class="filter-btn-premium" data-filter="limpeza">Limpeza</button>
+                <button class="filter-btn-premium" data-filter="antesdepois">Antes/Depois</button>
+            </div>
+            <div class="galeria-grid-premium" id="galeriaGrid"></div>
+        </div>
+    </section>
+
+    <!-- Diferenciais Premium -->
+    <section>
+        <div class="container">
+            <h2 class="section-title-premium">Nossos <span>Diferenciais</span></h2>
+            <div class="dif-grid-premium">
+                <div class="dif-card-premium"><i class="fas fa-users"></i><h4>Equipe Qualificada</h4><p>Profissionais certificados</p></div>
+                <div class="dif-card-premium"><i class="fas fa-user-check"></i><h4>Atendimento Personalizado</h4><p>Soluções sob medida</p></div>
+                <div class="dif-card-premium"><i class="fas fa-globe-americas"></i><h4>Compromisso Ambiental</h4><p>Práticas sustentáveis</p></div>
+                <div class="dif-card-premium"><i class="fas fa-hard-hat"></i><h4>Segurança Operacional</h4><p>Normas rigorosas</p></div>
+                <div class="dif-card-premium"><i class="fas fa-chart-line"></i><h4>Relatórios Técnicos</h4><p>Documentação completa</p></div>
+                <div class="dif-card-premium"><i class="fas fa-medal"></i><h4>Execução com Qualidade</h4><p>Alto padrão</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estatísticas Premium -->
+    <section class="stats-premium">
+        <div class="container">
+            <div class="stats-grid-premium">
+                <div class="stat-card-premium"><div class="stat-number-premium" data-target="100">0</div><div>Milhares de Mudas</div></div>
+                <div class="stat-card-premium"><div class="stat-number-premium" data-target="18">0</div><div>mil m² Áreas Recuperadas</div></div>
+                <div class="stat-card-premium"><div class="stat-number-premium" data-target="1000">0</div><div>Horas de Serviços</div></div>
+                <div class="stat-card-premium"><div class="stat-number-premium" data-target="100">0</div><div>% Compromisso Ambiental</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos Premium -->
+    <section>
+        <div class="container">
+            <h2 class="section-title-premium">O que dizem <span>nossos clientes</span></h2>
+            <div class="carrossel-premium">
+                <div class="carrossel-track-premium" id="carrosselTrack">
+                    <div class="depoimento-premium"><i class="fas fa-quote-right"></i><p>"Excelente trabalho de recuperação ambiental. Profissionais dedicados e resultados impressionantes."</p><div class="cliente-premium">— Carlos M.</div></div>
+                    <div class="depoimento-premium"><i class="fas fa-quote-right"></i><p>"Serviço ágil, eficiente e com ótimo custo-benefício. Recomendo fortemente!"</p><div class="cliente-premium">— Sandra R.</div></div>
+                    <div class="depoimento-premium"><i class="fas fa-quote-right"></i><p>"Comprometimento total com o meio ambiente. Parceiros de confiança para nossa cidade."</p><div class="cliente-premium">— Prefeitura</div></div>
+                </div>
+                <div class="controls"><button class="carrossel-btn-premium" id="prevDepo">◀ Anterior</button><button class="carrossel-btn-premium" id="nextDepo">Próximo ▶</button></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Premium -->
+    <section id="contato">
+        <div class="container">
+            <div class="contato-premium">
+                <div class="contato-grid-premium">
+                    <div>
+                        <h3 style="color: var(--verde-escuro); font-size: 1.8rem; margin-bottom: 20px;">Vamos conversar?</h3>
+                        <p style="margin-bottom: 30px;">Entre em contato e solicite um orçamento sem compromisso.</p>
+                        <div class="info-contato-premium">
+                            <p><i class="fas fa-phone-alt"></i> <a href="tel:5515996626052">(15) 99662-6052</a></p>
+                            <p><i class="fas fa-envelope"></i> solucoesambientaisalfa@gmail.com</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Rua Brilhante, 400 - Vale San Fernando, Itapetininga - SP</p>
+                        </div>
+                    </div>
+                    <div>
+                        <iframe src="https://www.google.com/maps?q=-23.608811,-48.015204&z=17&output=embed" width="100%" height="300" style="border:0; border-radius: 30px;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 </main>
 
-<footer>
-    <div class="container footer-grid">
-        <div><h3 style="color: var(--verde-claro);">ALFA Soluções Ambientais</h3><p>Cuidar do presente, preservar o futuro.</p></div>
-        <div><h4>Menu</h4><p><a href="#sobre">Início</a> | <a href="#servicos">Serviços</a> | <a href="#galeria">Galeria</a> | <a href="#contato">Contato</a></p></div>
-        <div><h4>Redes Sociais</h4><div class="social-icons"><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a></div></div>
+<footer class="footer-premium">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 40px; margin-bottom: 40px;">
+            <div><div class="footer-logo-premium">ALFA</div><p>Soluções Ambientais</p><p style="margin-top: 10px;">Cuidar do presente, preservar o futuro.</p></div>
+            <div><h4 style="color: white; margin-bottom: 15px;">Menu</h4><p><a href="#home">Início</a> | <a href="#sobre">Sobre</a> | <a href="#servicos">Serviços</a> | <a href="#contato">Contato</a></p></div>
+            <div><h4 style="color: white; margin-bottom: 15px;">Redes Sociais</h4><div style="display: flex; gap: 20px;"><a href="#"><i class="fab fa-instagram fa-2x"></i></a><a href="#"><i class="fab fa-linkedin fa-2x"></i></a><a href="#"><i class="fab fa-facebook fa-2x"></i></a></div></div>
+        </div>
+        <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px;">© 2026 ALFA Soluções Ambientais. Todos os direitos reservados.</div>
     </div>
-    <div class="container" style="text-align:center; border-top: 1px solid #2f5842; padding-top: 25px;">© 2026 ALFA Soluções Ambientais. Todos os direitos reservados.</div>
 </footer>
 
-<a href="https://wa.me/5515996626052" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/5515996626052" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <script>
     const imagensGaleria = [
@@ -809,8 +959,8 @@
         const filtrados = imagensGaleria.filter(img => filtro === 'all' || img.cat === filtro);
         filtrados.forEach((img) => {
             const div = document.createElement('div');
-            div.className = 'gallery-item';
-            div.innerHTML = `<img src="${img.url}" alt="Galeria ALFA" loading="lazy">`;
+            div.className = 'gallery-item-premium';
+            div.innerHTML = `<img src="${img.url}" alt="Galeria ALFA" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus" style="color:white; font-size:2rem;"></i></div>`;
             div.addEventListener('click', () => openLightbox(img.url.split('?')[0]));
             grid.appendChild(div);
         });
@@ -829,16 +979,16 @@
         lb.classList.add('active');
     }
 
-    document.querySelectorAll('.filter-btn').forEach(btn => {
+    document.querySelectorAll('.filter-btn-premium').forEach(btn => {
         btn.addEventListener('click', () => {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.filter-btn-premium').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             renderGaleria(btn.dataset.filter);
         });
     });
     renderGaleria('all');
 
-    const counters = document.querySelectorAll('.stat-number');
+    const counters = document.querySelectorAll('.stat-number-premium');
     let counted = false;
     const observerStats = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -846,17 +996,15 @@
                 counted = true;
                 counters.forEach(counter => {
                     const target = parseInt(counter.dataset.target);
-                    const suffix = counter.dataset.suffix || '';
                     let current = 0;
-                    const increment = target / 50;
+                    const inc = target / 50;
                     const update = () => {
                         if(current < target) {
-                            current += increment;
-                            let val = Math.min(Math.ceil(current), target);
-                            counter.innerText = suffix === '%' ? val + '%' : val;
+                            current += inc;
+                            counter.innerText = Math.min(Math.ceil(current), target);
                             setTimeout(update, 20);
                         } else {
-                            counter.innerText = suffix === '%' ? target + '%' : target;
+                            counter.innerText = target;
                         }
                     };
                     update();
@@ -864,12 +1012,11 @@
             }
         });
     }, { threshold: 0.5 });
-    if(document.querySelector('.stats-bg')) observerStats.observe(document.querySelector('.stats-bg'));
+    observerStats.observe(document.querySelector('.stats-premium'));
 
     let currentIdx = 0;
     const track = document.getElementById('carrosselTrack');
-    const depoimentos = document.querySelectorAll('.depoimento');
-    const total = depoimentos.length;
+    const total = document.querySelectorAll('.depoimento-premium').length;
     function updateCarrossel() { if(track) track.style.transform = `translateX(-${currentIdx * 100}%)`; }
     document.getElementById('nextDepo')?.addEventListener('click', () => { currentIdx = (currentIdx + 1) % total; updateCarrossel(); });
     document.getElementById('prevDepo')?.addEventListener('click', () => { currentIdx = (currentIdx - 1 + total) % total; updateCarrossel(); });
