@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-    <meta name="description" content="ALFA Soluções Ambientais - Especialistas em recuperação ambiental, reflorestamento, plantio de mudas nativas, roçagem mecanizada e conservação de áreas verdes.">
-    <meta name="keywords" content="recuperação ambiental, reflorestamento, plantio de mudas, roçagem, limpeza de áreas, conservação ambiental">
-    <meta name="author" content="ALFA Soluções Ambientais">
+    <meta name="description" content="ALFA Soluções Ambientais - Excelência em recuperação ambiental, reflorestamento e conservação de áreas verdes.">
     <meta name="theme-color" content="#0B5D3B">
-    <title>ALFA Soluções Ambientais | Design Premium</title>
+    <title>ALFA Soluções Ambientais | Luxo & Sustentabilidade</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -20,24 +18,24 @@
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #FFFFFF;
-            color: #1a1a2e;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0a1a12;
+            color: #f0f0f0;
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
 
         :root {
-            --verde-escuro: #0B5D3B;
+            --verde-profundo: #0a2a1a;
+            --verde-esmeralda: #1a6b4a;
+            --verde-jade: #2d8f5a;
             --verde-claro: #6FAF45;
-            --verde-gradient: linear-gradient(135deg, #0B5D3B 0%, #1a8f5a 100%);
+            --ouro: #D4AF37;
+            --ouro-claro: #F3D56E;
             --branco: #FFFFFF;
-            --cinza-claro: #F8F9FA;
-            --cinza-medio: #E9ECEF;
-            --dourado: #D4AF37;
-            --sombra: 0 20px 40px -15px rgba(0,0,0,0.1);
-            --sombra-forte: 0 30px 50px -20px rgba(0,0,0,0.15);
-            --transicao: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --cinza-luxo: #1a1f1c;
+            --sombra-luxo: 0 25px 50px -12px rgba(0,0,0,0.5);
+            --glow: 0 0 20px rgba(111, 175, 69, 0.3);
         }
 
         .container {
@@ -45,694 +43,480 @@
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 24px;
+            position: relative;
+            z-index: 2;
         }
 
-        /* Botões Premium */
-        .btn-primary {
-            background: var(--verde-gradient);
-            color: white;
-            padding: 16px 38px;
-            border-radius: 50px;
+        /* Botões Luxuosos */
+        .btn-luxo {
+            background: linear-gradient(135deg, var(--ouro) 0%, var(--ouro-claro) 100%);
+            color: #1a1a1a;
+            padding: 16px 42px;
+            border-radius: 60px;
             font-weight: 700;
             text-decoration: none;
             display: inline-block;
-            transition: var(--transicao);
+            transition: all 0.4s ease;
             border: none;
             cursor: pointer;
-            box-shadow: 0 8px 20px rgba(11, 93, 59, 0.3);
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             position: relative;
             overflow: hidden;
-            z-index: 1;
         }
 
-        .btn-primary::before {
+        .btn-luxo::before {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
             transition: left 0.5s;
-            z-index: -1;
         }
 
-        .btn-primary:hover::before {
+        .btn-luxo:hover::before {
             left: 100%;
         }
 
-        .btn-primary:hover {
+        .btn-luxo:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 28px rgba(11, 93, 59, 0.4);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
         }
 
-        .btn-secondary {
+        .btn-outline-luxo {
             background: transparent;
-            color: var(--verde-escuro);
-            padding: 14px 36px;
-            border-radius: 50px;
-            font-weight: 700;
+            color: var(--ouro);
+            padding: 14px 40px;
+            border-radius: 60px;
+            font-weight: 600;
             text-decoration: none;
             display: inline-block;
-            border: 2px solid var(--verde-escuro);
-            transition: var(--transicao);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
+            border: 2px solid var(--ouro);
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
 
-        .btn-secondary:hover {
-            background: var(--verde-escuro);
-            color: white;
+        .btn-outline-luxo:hover {
+            background: var(--ouro);
+            color: #1a1a1a;
             transform: translateY(-3px);
-            border-color: var(--verde-escuro);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
         }
 
-        /* Header Premium */
+        /* Header Luxuoso */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255,255,255,0.98);
-            backdrop-filter: blur(15px);
+            background: rgba(10, 26, 18, 0.95);
+            backdrop-filter: blur(12px);
             z-index: 1000;
-            transition: var(--transicao);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s;
         }
 
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 24px;
+            padding: 15px 24px;
             max-width: 1400px;
             margin: 0 auto;
         }
 
         .logo-img {
             height: auto;
-            max-height: 80px;
+            max-height: 75px;
             width: auto;
             object-fit: contain;
-            transition: var(--transicao);
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
         }
 
         .nav-links {
             display: flex;
-            gap: 40px;
+            gap: 45px;
             list-style: none;
         }
         .nav-links a {
             text-decoration: none;
-            color: #2d2d3a;
-            font-weight: 600;
+            color: #e0e0e0;
+            font-weight: 500;
             transition: 0.3s;
-            font-size: 1rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             position: relative;
         }
-        .nav-links a::after {
+        .nav-links a::before {
             content: '';
             position: absolute;
             bottom: -5px;
             left: 0;
             width: 0;
-            height: 2px;
-            background: var(--verde-claro);
+            height: 1px;
+            background: var(--ouro);
             transition: width 0.3s;
         }
-        .nav-links a:hover::after {
+        .nav-links a:hover::before {
             width: 100%;
         }
         .nav-links a:hover {
-            color: var(--verde-escuro);
+            color: var(--ouro);
         }
         .menu-mobile {
             display: none;
             font-size: 1.8rem;
             cursor: pointer;
-            color: var(--verde-escuro);
+            color: var(--ouro);
             background: none;
             border: none;
         }
 
         main {
-            margin-top: 112px;
+            margin-top: 105px;
         }
 
-        /* Hero Section Premium */
-        .hero-premium {
-            min-height: 90vh;
-            background: linear-gradient(135deg, rgba(11,93,59,0.92) 0%, rgba(31,64,55,0.88) 100%), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1600&q=100');
+        /* Hero Section - Background Floresta */
+        .hero-luxo {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(10, 26, 18, 0.85) 0%, rgba(10, 26, 18, 0.7) 100%), url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1600&q=100');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             display: flex;
             align-items: center;
             position: relative;
-            overflow: hidden;
         }
 
-        .hero-premium::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
-            background-size: 40px 40px;
-            animation: moveDots 20s linear infinite;
-        }
-
-        @keyframes moveDots {
-            from { transform: translate(0, 0); }
-            to { transform: translate(40px, 40px); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-            color: white;
-            padding: 60px 20px;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-        }
-
-        .hero-content h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero-content p {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            margin-bottom: 40px;
-            opacity: 0.95;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        /* Seções com design elegante */
-        section {
-            padding: 100px 0;
-        }
-
-        .section-title-premium {
-            text-align: center;
-            font-size: clamp(2rem, 5vw, 2.5rem);
-            margin-bottom: 60px;
-            color: var(--verde-escuro);
-            font-weight: 800;
-            position: relative;
-        }
-
-        .section-title-premium span {
-            color: var(--verde-claro);
-            position: relative;
-        }
-
-        .section-title-premium::after {
-            content: '';
-            width: 80px;
-            height: 4px;
-            background: var(--verde-gradient);
-            display: block;
-            margin: 20px auto 0;
-            border-radius: 4px;
-        }
-
-        /* Cards de Serviços Modernos */
-        .cards-grid-premium {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 35px;
-        }
-
-        .service-card-premium {
-            background: white;
-            border-radius: 28px;
-            padding: 40px 28px;
-            text-align: center;
-            transition: var(--transicao);
-            box-shadow: var(--sombra);
-            border: 1px solid rgba(0,0,0,0.05);
-            position: relative;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .service-card-premium::before {
+        .hero-luxo::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            height: 0;
-            background: var(--verde-gradient);
-            transition: height 0.4s ease;
-            z-index: -1;
-            border-radius: 28px;
+            height: 150px;
+            background: linear-gradient(to top, #0a1a12, transparent);
         }
 
-        .service-card-premium:hover::before {
-            height: 100%;
+        .hero-content-luxo {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 60px 20px;
         }
 
-        .service-card-premium:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--sombra-forte);
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            color: var(--ouro);
+            margin-bottom: 20px;
+            font-weight: 400;
         }
 
-        .service-card-premium:hover i,
-        .service-card-premium:hover h3,
-        .service-card-premium:hover p {
-            color: white;
-        }
-
-        .service-card-premium i {
-            font-size: 3.5rem;
-            color: var(--verde-claro);
+        .hero-content-luxo h1 {
+            font-size: clamp(3rem, 7vw, 5rem);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
             margin-bottom: 25px;
-            transition: var(--transicao);
+            line-height: 1.2;
         }
 
-        .service-card-premium h3 {
-            font-size: 1.6rem;
-            margin-bottom: 15px;
-            color: var(--verde-escuro);
-            transition: var(--transicao);
+        .hero-content-luxo p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            font-weight: 300;
         }
 
-        .service-card-premium p {
-            color: #5a5a6e;
-            line-height: 1.6;
-            transition: var(--transicao);
+        /* Seção Sobre - Fundo Madeira/Textura */
+        .sobre-luxo {
+            background: linear-gradient(135deg, #0d2218 0%, #08140f 100%);
+            position: relative;
         }
 
-        /* Sobre Grid Moderno */
-        .sobre-grid-premium {
+        .sobre-luxo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.03"><path fill="none" d="M10,10 L90,10 M10,20 L90,20 M10,30 L90,30 M10,40 L90,40 M10,50 L90,50 M10,60 L90,60 M10,70 L90,70 M10,80 L90,80 M10,90 L90,90" stroke="white" stroke-width="0.5"/></svg>');
+            background-size: 30px 30px;
+            pointer-events: none;
+        }
+
+        .section-title-luxo {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.2rem, 6vw, 3rem);
+            margin-bottom: 60px;
+            color: var(--branco);
+            font-weight: 600;
+            position: relative;
+        }
+
+        .section-title-luxo span {
+            color: var(--ouro);
+        }
+
+        .section-title-luxo::after {
+            content: '✦';
+            font-size: 2rem;
+            color: var(--ouro);
+            display: block;
+            margin-top: 15px;
+        }
+
+        .sobre-grid-luxo {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
         }
 
-        .sobre-texto-premium {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: #2d2d3a;
+        .sobre-texto-luxo {
+            font-size: 1rem;
+            line-height: 1.8;
+            font-weight: 300;
         }
 
-        .sobre-texto-premium h3 {
-            font-size: 1.8rem;
-            color: var(--verde-escuro);
-            margin-bottom: 20px;
-        }
-
-        .sobre-stats {
-            display: flex;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number-premium {
+        .sobre-texto-luxo h3 {
+            font-family: 'Cormorant Garamond', serif;
             font-size: 2rem;
-            font-weight: 800;
-            color: var(--verde-escuro);
+            color: var(--ouro);
+            margin-bottom: 25px;
         }
 
-        .sobre-img-premium {
-            border-radius: 40px;
+        .assinatura {
+            margin-top: 30px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--ouro-claro);
+        }
+
+        .sobre-img-luxo {
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: var(--sombra-forte);
+            box-shadow: var(--sombra-luxo);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* Serviços - Fundo Verde Escuro com Textura */
+        .servicos-luxo {
+            background: linear-gradient(135deg, #0a2a1a 0%, #0d1f15 100%);
             position: relative;
         }
 
-        .sobre-img-premium img {
+        .cards-grid-luxo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .service-card-luxo {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 45px 30px;
+            text-align: center;
+            transition: all 0.5s ease;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card-luxo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
             width: 100%;
-            height: auto;
-            display: block;
-            transition: var(--transicao);
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            transition: left 0.5s;
         }
 
-        .sobre-img-premium:hover img {
-            transform: scale(1.05);
+        .service-card-luxo:hover::before {
+            left: 100%;
         }
 
-        /* Galeria Premium */
-        .galeria-premium {
-            background: var(--cinza-claro);
+        .service-card-luxo:hover {
+            transform: translateY(-10px);
+            border-color: var(--ouro);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
-        .galeria-filtros-premium {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 50px;
+        .service-card-luxo i {
+            font-size: 3.5rem;
+            color: var(--ouro);
+            margin-bottom: 25px;
         }
 
-        .filter-btn-premium {
-            background: white;
-            border: none;
-            padding: 10px 28px;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.3s;
-            font-size: 0.9rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        .service-card-luxo h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-family: 'Cormorant Garamond', serif;
         }
 
-        .filter-btn-premium.active, .filter-btn-premium:hover {
-            background: var(--verde-escuro);
-            color: white;
-            transform: translateY(-2px);
+        /* Galeria - Fundo Preto Luxo */
+        .galeria-luxo {
+            background: #050a08;
+            position: relative;
         }
 
-        .galeria-grid-premium {
+        .galeria-grid-luxo {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 25px;
         }
 
-        .gallery-item-premium {
+        .gallery-item-luxo {
             overflow: hidden;
-            border-radius: 24px;
+            border-radius: 20px;
             cursor: pointer;
             position: relative;
             aspect-ratio: 4 / 3;
-            box-shadow: var(--sombra);
-            transition: var(--transicao);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.4s;
         }
 
-        .gallery-item-premium img {
+        .gallery-item-luxo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transicao);
+            transition: all 0.6s;
         }
 
-        .gallery-item-premium:hover {
+        .gallery-item-luxo:hover {
             transform: scale(1.02);
+            border-color: var(--ouro);
         }
 
-        .gallery-item-premium:hover img {
-            transform: scale(1.08);
+        .gallery-item-luxo:hover img {
+            transform: scale(1.1);
         }
 
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-            padding: 20px;
-            opacity: 0;
-            transition: 0.3s;
+        /* Diferenciais - Fundo com Folhas */
+        .diferenciais-luxo {
+            background: linear-gradient(135deg, #0d2218 0%, #08140f 100%);
+            position: relative;
         }
 
-        .gallery-item-premium:hover .gallery-overlay {
-            opacity: 1;
-        }
-
-        /* Diferenciais com ícones modernos */
-        .dif-grid-premium {
+        .dif-grid-luxo {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 40px;
             text-align: center;
         }
 
-        .dif-card-premium {
-            background: var(--cinza-claro);
+        .dif-card-luxo {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(5px);
             padding: 35px 20px;
-            border-radius: 30px;
-            transition: var(--transicao);
+            border-radius: 25px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.4s;
         }
 
-        .dif-card-premium:hover {
-            transform: translateY(-8px);
-            background: white;
-            box-shadow: var(--sombra);
+        .dif-card-luxo:hover {
+            border-color: var(--ouro);
+            transform: translateY(-5px);
         }
 
-        .dif-card-premium i {
-            font-size: 3rem;
-            background: var(--verde-gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+        .dif-card-luxo i {
+            font-size: 2.8rem;
+            color: var(--ouro);
             margin-bottom: 20px;
-            display: inline-block;
         }
 
-        .dif-card-premium h4 {
-            font-size: 1.2rem;
-            color: var(--verde-escuro);
-            margin-bottom: 10px;
-        }
-
-        /* Estatísticas Impactantes */
-        .stats-premium {
-            background: var(--verde-gradient);
-            color: white;
-            text-align: center;
+        /* Estatísticas - Fundo Dourado */
+        .stats-luxo {
+            background: linear-gradient(135deg, var(--verde-esmeralda) 0%, var(--verde-profundo) 100%);
             position: relative;
-            overflow: hidden;
         }
 
-        .stats-premium::before {
+        .stats-luxo::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
-            background-size: 30px 30px;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1600&q=10');
+            background-size: cover;
+            opacity: 0.1;
+            pointer-events: none;
         }
 
-        .stats-grid-premium {
+        .stats-grid-luxo {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 40px;
+            text-align: center;
             position: relative;
             z-index: 1;
         }
 
-        .stat-card-premium {
+        .stat-card-luxo {
+            background: rgba(0,0,0,0.3);
             backdrop-filter: blur(10px);
-            background: rgba(255,255,255,0.1);
-            padding: 30px;
-            border-radius: 30px;
-            transition: var(--transicao);
+            padding: 35px;
+            border-radius: 25px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
-        .stat-card-premium:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.15);
-        }
-
-        .stat-number-premium {
+        .stat-number-luxo {
             font-size: 3.5rem;
             font-weight: 800;
+            color: var(--ouro);
+            font-family: 'Cormorant Garamond', serif;
         }
 
-        /* Carrossel Premium */
-        .carrossel-premium {
-            position: relative;
-            max-width: 900px;
-            margin: auto;
-            overflow: hidden;
+        /* Depoimentos */
+        .depoimentos-luxo {
+            background: linear-gradient(135deg, #050a08 0%, #0a1a12 100%);
         }
 
-        .carrossel-track-premium {
-            display: flex;
-            transition: transform 0.5s ease;
+        /* Contato - Fundo Natureza */
+        .contato-luxo {
+            background: linear-gradient(135deg, rgba(10, 26, 18, 0.95), rgba(5, 10, 8, 0.98)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=100');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
         }
 
-        .depoimento-premium {
-            min-width: 100%;
-            padding: 40px;
-            background: white;
+        .contato-card-luxo {
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(15px);
             border-radius: 40px;
-            text-align: center;
-            box-shadow: var(--sombra);
-            border: 1px solid rgba(0,0,0,0.05);
+            padding: 50px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
-        .depoimento-premium i {
-            font-size: 3rem;
-            color: var(--verde-claro);
-            opacity: 0.5;
-            margin-bottom: 20px;
-        }
-
-        .cliente-premium {
-            margin-top: 20px;
-            font-weight: 700;
-            color: var(--verde-escuro);
-        }
-
-        .carrossel-btn-premium {
-            background: var(--verde-escuro);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 50px;
-            cursor: pointer;
-            margin: 20px 10px 0;
-            font-weight: 600;
-            transition: var(--transicao);
-        }
-
-        /* Contato Premium */
-        .contato-premium {
-            background: linear-gradient(135deg, var(--cinza-claro) 0%, white 100%);
-            border-radius: 60px;
-            padding: 60px;
-        }
-
-        .contato-grid-premium {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .info-contato-premium i {
+        .info-contato-luxo i {
             width: 45px;
             height: 45px;
-            background: var(--verde-gradient);
+            background: rgba(212, 175, 55, 0.2);
             border-radius: 50%;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--ouro);
             margin-right: 15px;
         }
 
-        .info-contato-premium p {
-            margin: 25px 0;
-            display: flex;
-            align-items: center;
-            font-size: 1rem;
-        }
-
-        /* Footer Premium */
-        .footer-premium {
-            background: #0a1a12;
-            color: #aaa;
-            padding: 60px 0 30px;
-        }
-
-        .footer-logo-premium {
-            font-size: 1.8rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #fff, var(--verde-claro));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 15px;
-        }
-
-        /* Responsivo */
-        @media (max-width: 1024px) {
-            main {
-                margin-top: 90px;
-            }
-            section {
-                padding: 70px 0;
-            }
-            .contato-premium {
-                padding: 40px;
-            }
-        }
-
-        @media (max-width: 900px) {
-            .navbar {
-                padding: 12px 20px;
-            }
-            .logo-img {
-                max-height: 55px;
-            }
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                background: white;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                padding: 25px;
-                box-shadow: 0 20px 30px rgba(0,0,0,0.1);
-                text-align: center;
-                gap: 20px;
-            }
-            .nav-links.active {
-                display: flex;
-            }
-            .menu-mobile {
-                display: block;
-            }
-            .sobre-grid-premium, .contato-grid-premium {
-                grid-template-columns: 1fr;
-            }
-            main {
-                margin-top: 75px;
-            }
-            section {
-                padding: 50px 0;
-            }
-            .contato-premium {
-                padding: 30px;
-                border-radius: 40px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            .btn-primary, .btn-secondary {
-                padding: 12px 28px;
-                font-size: 0.9rem;
-            }
-            .cards-grid-premium {
-                grid-template-columns: 1fr;
-            }
-            .galeria-grid-premium {
-                grid-template-columns: 1fr;
-            }
-            .stats-grid-premium {
-                grid-template-columns: 1fr;
-            }
+        /* Footer */
+        .footer-luxo {
+            background: #030605;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
         }
 
         .whatsapp-float {
@@ -748,13 +532,107 @@
             justify-content: center;
             font-size: 2rem;
             color: white;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
             z-index: 99;
-            transition: 0.2s;
+            transition: 0.3s;
             text-decoration: none;
         }
         .whatsapp-float:hover {
             transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .lightbox {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.3s;
+        }
+        .lightbox.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            border: 2px solid var(--ouro);
+        }
+        .close-lightbox {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            font-size: 2.5rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (max-width: 900px) {
+            .navbar {
+                padding: 12px 20px;
+            }
+            .logo-img {
+                max-height: 50px;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #0a1a12;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 25px;
+                text-align: center;
+                gap: 20px;
+                border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-mobile {
+                display: block;
+            }
+            .sobre-grid-luxo {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            main {
+                margin-top: 80px;
+            }
+            .contato-card-luxo {
+                padding: 30px;
+            }
+            .btn-luxo, .btn-outline-luxo {
+                padding: 12px 28px;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .cards-grid-luxo {
+                grid-template-columns: 1fr;
+            }
+            .galeria-grid-luxo {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid-luxo {
+                grid-template-columns: 1fr;
+            }
+            .dif-grid-luxo {
+                gap: 20px;
+            }
         }
     </style>
 </head>
@@ -777,142 +655,133 @@
 </header>
 
 <main>
-    <!-- Hero Premium -->
-    <section id="home" class="hero-premium">
+    <!-- Hero -->
+    <section id="home" class="hero-luxo">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">✦ 15+ anos de excelência ✦</div>
-                <h1>Recuperação Ambiental e<br><span style="color: var(--verde-claro);">Conservação de Áreas</span></h1>
+            <div class="hero-content-luxo">
+                <div class="hero-subtitle">✦ SUSTENTABILIDADE COM EXCELÊNCIA ✦</div>
+                <h1>Recuperação Ambiental<br><span style="color: var(--ouro);">& Conservação de Áreas</span></h1>
                 <p>Soluções completas em recuperação ambiental, reflorestamento, plantio de mudas nativas, roçagem e manutenção de áreas verdes.</p>
                 <div class="hero-buttons">
-                    <a href="#contato" class="btn-primary">Solicitar Orçamento</a>
-                    <a href="#servicos" class="btn-secondary">Nossos Serviços</a>
+                    <a href="#contato" class="btn-luxo">Solicitar Orçamento</a>
+                    <a href="#servicos" class="btn-outline-luxo">Nossos Serviços</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sobre Premium -->
-    <section id="sobre">
+    <!-- Sobre -->
+    <section id="sobre" class="sobre-luxo">
         <div class="container">
-            <h2 class="section-title-premium">Quem <span>Somos</span></h2>
-            <div class="sobre-grid-premium">
-                <div class="sobre-texto-premium">
-                    <h3>Cuidar do presente, preservar o futuro.</h3>
+            <h2 class="section-title-luxo">Quem <span>Somos</span></h2>
+            <div class="sobre-grid-luxo">
+                <div class="sobre-texto-luxo">
+                    <h3>Cuidar do presente,<br>preservar o futuro.</h3>
                     <p>A ALFA Soluções Ambientais atua no desenvolvimento de soluções sustentáveis para conservação, recuperação e manutenção de áreas verdes. Nossa equipe trabalha com comprometimento, qualidade e responsabilidade ambiental, garantindo resultados eficientes para cada projeto.</p>
                     <br>
                     <p>Com anos de experiência, atendemos desde pequenas propriedades até grandes indústrias e órgãos públicos, sempre alinhados ao mais alto padrão técnico e ecológico.</p>
-                    <div class="sobre-stats">
-                        <div class="stat-item">
-                            <div class="stat-number-premium">100+</div>
-                            <div>Projetos</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number-premium">50+</div>
-                            <div>Clientes</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number-premium">10+</div>
-                            <div>Anos</div>
-                        </div>
-                    </div>
+                    <div class="assinatura">— Compromisso com a vida</div>
                 </div>
-                <div class="sobre-img-premium">
-                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=100" alt="Equipe ALFA">
+                <div class="sobre-img-luxo">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=100" alt="Equipe ALFA" style="width:100%; display:block;">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Serviços Premium -->
-    <section id="servicos" style="background: var(--cinza-claro);">
+    <!-- Serviços -->
+    <section id="servicos" class="servicos-luxo">
         <div class="container">
-            <h2 class="section-title-premium">Nossos <span>Serviços</span></h2>
-            <div class="cards-grid-premium">
-                <div class="service-card-premium"><i class="fas fa-seedling"></i><h3>Plantio de Mudas Nativas</h3><p>Recuperação de matas ciliares e reservas legais com espécies nativas.</p></div>
-                <div class="service-card-premium"><i class="fas fa-leaf"></i><h3>Recuperação Ambiental</h3><p>Projetos completos de restauração ecológica de áreas degradadas.</p></div>
-                <div class="service-card-premium"><i class="fas fa-tree"></i><h3>Reflorestamento</h3><p>Planejamento e execução de florestas para conservação e sustentabilidade.</p></div>
-                <div class="service-card-premium"><i class="fas fa-tractor"></i><h3>Roçagem Mecanizada</h3><p>Limpeza de faixas, aceiros e manutenção com equipamentos modernos.</p></div>
-                <div class="service-card-premium"><i class="fas fa-brush"></i><h3>Limpeza de Áreas</h3><p>Remoção de resíduos, poda e manejo de vegetação invasora.</p></div>
-                <div class="service-card-premium"><i class="fas fa-water"></i><h3>Conservação de Áreas Verdes</h3><p>Manutenção preventiva e corretiva de parques e jardins.</p></div>
+            <h2 class="section-title-luxo">Nossos <span>Serviços</span></h2>
+            <div class="cards-grid-luxo">
+                <div class="service-card-luxo"><i class="fas fa-seedling"></i><h3>Plantio de Mudas Nativas</h3><p>Recuperação de matas ciliares e reservas legais com espécies nativas.</p></div>
+                <div class="service-card-luxo"><i class="fas fa-leaf"></i><h3>Recuperação Ambiental</h3><p>Projetos completos de restauração ecológica de áreas degradadas.</p></div>
+                <div class="service-card-luxo"><i class="fas fa-tree"></i><h3>Reflorestamento</h3><p>Planejamento e execução de florestas para conservação e sustentabilidade.</p></div>
+                <div class="service-card-luxo"><i class="fas fa-tractor"></i><h3>Roçagem Mecanizada</h3><p>Limpeza de faixas, aceiros e manutenção com equipamentos modernos.</p></div>
+                <div class="service-card-luxo"><i class="fas fa-brush"></i><h3>Limpeza de Áreas</h3><p>Remoção de resíduos, poda e manejo de vegetação invasora.</p></div>
+                <div class="service-card-luxo"><i class="fas fa-water"></i><h3>Conservação de Áreas Verdes</h3><p>Manutenção preventiva e corretiva de parques e jardins.</p></div>
             </div>
         </div>
     </section>
 
-    <!-- Galeria Premium -->
-    <section id="galeria" class="galeria-premium">
+    <!-- Galeria -->
+    <section id="galeria" class="galeria-luxo">
         <div class="container">
-            <h2 class="section-title-premium">Nossa <span>Galeria</span></h2>
-            <div class="galeria-filtros-premium" id="filterButtons">
-                <button class="filter-btn-premium active" data-filter="all">Todas</button>
-                <button class="filter-btn-premium" data-filter="plantio">Plantio</button>
-                <button class="filter-btn-premium" data-filter="recuperacao">Recuperação</button>
-                <button class="filter-btn-premium" data-filter="rocagem">Roçagem</button>
-                <button class="filter-btn-premium" data-filter="limpeza">Limpeza</button>
-                <button class="filter-btn-premium" data-filter="antesdepois">Antes/Depois</button>
+            <h2 class="section-title-luxo">Nossa <span>Galeria</span></h2>
+            <div class="galeria-filtros-luxo" style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-bottom:40px;" id="filterButtons">
+                <button class="filter-btn-luxo active" data-filter="all" style="background:rgba(212,175,55,0.2); border:1px solid rgba(212,175,55,0.5); padding:8px 24px; border-radius:40px; cursor:pointer; color:white; transition:0.3s;">Todas</button>
+                <button class="filter-btn-luxo" data-filter="plantio" style="background:transparent; border:1px solid rgba(212,175,55,0.3); padding:8px 24px; border-radius:40px; cursor:pointer; color:#ccc; transition:0.3s;">Plantio</button>
+                <button class="filter-btn-luxo" data-filter="recuperacao" style="background:transparent; border:1px solid rgba(212,175,55,0.3); padding:8px 24px; border-radius:40px; cursor:pointer; color:#ccc; transition:0.3s;">Recuperação</button>
+                <button class="filter-btn-luxo" data-filter="rocagem" style="background:transparent; border:1px solid rgba(212,175,55,0.3); padding:8px 24px; border-radius:40px; cursor:pointer; color:#ccc; transition:0.3s;">Roçagem</button>
+                <button class="filter-btn-luxo" data-filter="limpeza" style="background:transparent; border:1px solid rgba(212,175,55,0.3); padding:8px 24px; border-radius:40px; cursor:pointer; color:#ccc; transition:0.3s;">Limpeza</button>
+                <button class="filter-btn-luxo" data-filter="antesdepois" style="background:transparent; border:1px solid rgba(212,175,55,0.3); padding:8px 24px; border-radius:40px; cursor:pointer; color:#ccc; transition:0.3s;">Antes/Depois</button>
             </div>
-            <div class="galeria-grid-premium" id="galeriaGrid"></div>
+            <div class="galeria-grid-luxo" id="galeriaGrid"></div>
         </div>
     </section>
 
-    <!-- Diferenciais Premium -->
-    <section>
+    <!-- Diferenciais -->
+    <section class="diferenciais-luxo">
         <div class="container">
-            <h2 class="section-title-premium">Nossos <span>Diferenciais</span></h2>
-            <div class="dif-grid-premium">
-                <div class="dif-card-premium"><i class="fas fa-users"></i><h4>Equipe Qualificada</h4><p>Profissionais certificados</p></div>
-                <div class="dif-card-premium"><i class="fas fa-user-check"></i><h4>Atendimento Personalizado</h4><p>Soluções sob medida</p></div>
-                <div class="dif-card-premium"><i class="fas fa-globe-americas"></i><h4>Compromisso Ambiental</h4><p>Práticas sustentáveis</p></div>
-                <div class="dif-card-premium"><i class="fas fa-hard-hat"></i><h4>Segurança Operacional</h4><p>Normas rigorosas</p></div>
-                <div class="dif-card-premium"><i class="fas fa-chart-line"></i><h4>Relatórios Técnicos</h4><p>Documentação completa</p></div>
-                <div class="dif-card-premium"><i class="fas fa-medal"></i><h4>Execução com Qualidade</h4><p>Alto padrão</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Estatísticas Premium -->
-    <section class="stats-premium">
-        <div class="container">
-            <div class="stats-grid-premium">
-                <div class="stat-card-premium"><div class="stat-number-premium" data-target="100">0</div><div>Milhares de Mudas</div></div>
-                <div class="stat-card-premium"><div class="stat-number-premium" data-target="18">0</div><div>mil m² Áreas Recuperadas</div></div>
-                <div class="stat-card-premium"><div class="stat-number-premium" data-target="1000">0</div><div>Horas de Serviços</div></div>
-                <div class="stat-card-premium"><div class="stat-number-premium" data-target="100">0</div><div>% Compromisso Ambiental</div></div>
+            <h2 class="section-title-luxo">Nossos <span>Diferenciais</span></h2>
+            <div class="dif-grid-luxo">
+                <div class="dif-card-luxo"><i class="fas fa-users"></i><h4>Equipe Qualificada</h4><p>Profissionais certificados</p></div>
+                <div class="dif-card-luxo"><i class="fas fa-user-check"></i><h4>Atendimento Personalizado</h4><p>Soluções sob medida</p></div>
+                <div class="dif-card-luxo"><i class="fas fa-globe-americas"></i><h4>Compromisso Ambiental</h4><p>Práticas sustentáveis</p></div>
+                <div class="dif-card-luxo"><i class="fas fa-hard-hat"></i><h4>Segurança Operacional</h4><p>Normas rigorosas</p></div>
+                <div class="dif-card-luxo"><i class="fas fa-chart-line"></i><h4>Relatórios Técnicos</h4><p>Documentação completa</p></div>
+                <div class="dif-card-luxo"><i class="fas fa-medal"></i><h4>Execução com Qualidade</h4><p>Alto padrão</p></div>
             </div>
         </div>
     </section>
 
-    <!-- Depoimentos Premium -->
-    <section>
+    <!-- Estatísticas -->
+    <section class="stats-luxo">
         <div class="container">
-            <h2 class="section-title-premium">O que dizem <span>nossos clientes</span></h2>
-            <div class="carrossel-premium">
-                <div class="carrossel-track-premium" id="carrosselTrack">
-                    <div class="depoimento-premium"><i class="fas fa-quote-right"></i><p>"Excelente trabalho de recuperação ambiental. Profissionais dedicados e resultados impressionantes."</p><div class="cliente-premium">— Carlos M.</div></div>
-                    <div class="depoimento-premium"><i class="fas fa-quote-right"></i><p>"Serviço ágil, eficiente e com ótimo custo-benefício. Recomendo fortemente!"</p><div class="cliente-premium">— Sandra R.</div></div>
-                    <div class="depoimento-premium"><i class="fas fa-quote-right"></i><p>"Comprometimento total com o meio ambiente. Parceiros de confiança para nossa cidade."</p><div class="cliente-premium">— Prefeitura</div></div>
+            <div class="stats-grid-luxo">
+                <div class="stat-card-luxo"><div class="stat-number-luxo" data-target="100">0</div><div>Milhares de Mudas</div></div>
+                <div class="stat-card-luxo"><div class="stat-number-luxo" data-target="18">0</div><div>mil m² Áreas Recuperadas</div></div>
+                <div class="stat-card-luxo"><div class="stat-number-luxo" data-target="1000">0</div><div>Horas de Serviços</div></div>
+                <div class="stat-card-luxo"><div class="stat-number-luxo" data-target="100">0</div><div>% Compromisso Ambiental</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="depoimentos-luxo">
+        <div class="container">
+            <h2 class="section-title-luxo">O que dizem <span>nossos clientes</span></h2>
+            <div class="carrossel-luxo" style="max-width:900px; margin:auto; overflow:hidden; position:relative;">
+                <div class="carrossel-track-luxo" id="carrosselTrack" style="display:flex; transition:transform 0.5s ease;">
+                    <div class="depoimento-luxo" style="min-width:100%; padding:40px; background:rgba(255,255,255,0.05); border-radius:30px; text-align:center; border:1px solid rgba(212,175,55,0.3);"><i class="fas fa-quote-right" style="font-size:2.5rem; color:var(--ouro); opacity:0.6; margin-bottom:20px; display:inline-block;"></i><p style="font-size:1.1rem; margin-bottom:20px;">"Excelente trabalho de recuperação ambiental. Profissionais dedicados e resultados impressionantes."</p><div class="cliente-luxo" style="color:var(--ouro); font-weight:600;">— Carlos M.</div></div>
+                    <div class="depoimento-luxo" style="min-width:100%; padding:40px; background:rgba(255,255,255,0.05); border-radius:30px; text-align:center; border:1px solid rgba(212,175,55,0.3);"><i class="fas fa-quote-right" style="font-size:2.5rem; color:var(--ouro); opacity:0.6; margin-bottom:20px; display:inline-block;"></i><p style="font-size:1.1rem; margin-bottom:20px;">"Serviço ágil, eficiente e com ótimo custo-benefício. Recomendo fortemente!"</p><div class="cliente-luxo" style="color:var(--ouro); font-weight:600;">— Sandra R.</div></div>
+                    <div class="depoimento-luxo" style="min-width:100%; padding:40px; background:rgba(255,255,255,0.05); border-radius:30px; text-align:center; border:1px solid rgba(212,175,55,0.3);"><i class="fas fa-quote-right" style="font-size:2.5rem; color:var(--ouro); opacity:0.6; margin-bottom:20px; display:inline-block;"></i><p style="font-size:1.1rem; margin-bottom:20px;">"Comprometimento total com o meio ambiente. Parceiros de confiança para nossa cidade."</p><div class="cliente-luxo" style="color:var(--ouro); font-weight:600;">— Prefeitura</div></div>
                 </div>
-                <div class="controls"><button class="carrossel-btn-premium" id="prevDepo">◀ Anterior</button><button class="carrossel-btn-premium" id="nextDepo">Próximo ▶</button></div>
+                <div class="controls" style="text-align:center; margin-top:30px;">
+                    <button class="carrossel-btn-luxo" id="prevDepo" style="background:rgba(212,175,55,0.3); border:none; padding:10px 25px; border-radius:40px; cursor:pointer; color:white; margin:0 10px;">◀ Anterior</button>
+                    <button class="carrossel-btn-luxo" id="nextDepo" style="background:rgba(212,175,55,0.3); border:none; padding:10px 25px; border-radius:40px; cursor:pointer; color:white; margin:0 10px;">Próximo ▶</button>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contato Premium -->
-    <section id="contato">
+    <!-- Contato -->
+    <section id="contato" class="contato-luxo">
         <div class="container">
-            <div class="contato-premium">
-                <div class="contato-grid-premium">
+            <div class="contato-card-luxo">
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center;">
                     <div>
-                        <h3 style="color: var(--verde-escuro); font-size: 1.8rem; margin-bottom: 20px;">Vamos conversar?</h3>
-                        <p style="margin-bottom: 30px;">Entre em contato e solicite um orçamento sem compromisso.</p>
-                        <div class="info-contato-premium">
-                            <p><i class="fas fa-phone-alt"></i> <a href="tel:5515996626052">(15) 99662-6052</a></p>
-                            <p><i class="fas fa-envelope"></i> solucoesambientaisalfa@gmail.com</p>
-                            <p><i class="fas fa-map-marker-alt"></i> Rua Brilhante, 400 - Vale San Fernando, Itapetininga - SP</p>
+                        <h3 style="font-family:'Cormorant Garamond', serif; font-size:2rem; color:var(--ouro); margin-bottom:20px;">Vamos conversar?</h3>
+                        <p style="margin-bottom:30px;">Entre em contato e solicite um orçamento sem compromisso.</p>
+                        <div class="info-contato-luxo">
+                            <p style="margin:20px 0; display:flex; align-items:center;"><i class="fas fa-phone-alt"></i> <a href="tel:5515996626052" style="color:white; text-decoration:none;">(15) 99662-6052</a></p>
+                            <p style="margin:20px 0; display:flex; align-items:center;"><i class="fas fa-envelope"></i> solucoesambientaisalfa@gmail.com</p>
+                            <p style="margin:20px 0; display:flex; align-items:center;"><i class="fas fa-map-marker-alt"></i> Rua Brilhante, 400 - Vale San Fernando, Itapetininga - SP</p>
                         </div>
+                        <a href="https://wa.me/5515996626052" class="btn-luxo" style="display:inline-block; margin-top:20px;">WhatsApp</a>
                     </div>
                     <div>
-                        <iframe src="https://www.google.com/maps?q=-23.608811,-48.015204&z=17&output=embed" width="100%" height="300" style="border:0; border-radius: 30px;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.google.com/maps?q=-23.608811,-48.015204&z=17&output=embed" width="100%" height="280" style="border:0; border-radius:20px; border:1px solid rgba(212,175,55,0.3);" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
@@ -920,14 +789,14 @@
     </section>
 </main>
 
-<footer class="footer-premium">
+<footer class="footer-luxo">
     <div class="container">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 40px; margin-bottom: 40px;">
-            <div><div class="footer-logo-premium">ALFA</div><p>Soluções Ambientais</p><p style="margin-top: 10px;">Cuidar do presente, preservar o futuro.</p></div>
-            <div><h4 style="color: white; margin-bottom: 15px;">Menu</h4><p><a href="#home">Início</a> | <a href="#sobre">Sobre</a> | <a href="#servicos">Serviços</a> | <a href="#contato">Contato</a></p></div>
-            <div><h4 style="color: white; margin-bottom: 15px;">Redes Sociais</h4><div style="display: flex; gap: 20px;"><a href="#"><i class="fab fa-instagram fa-2x"></i></a><a href="#"><i class="fab fa-linkedin fa-2x"></i></a><a href="#"><i class="fab fa-facebook fa-2x"></i></a></div></div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:40px; margin-bottom:40px; text-align:center;">
+            <div><h3 style="font-family:'Cormorant Garamond', serif; font-size:1.8rem; color:var(--ouro);">ALFA</h3><p>Soluções Ambientais</p><p style="margin-top:10px;">Cuidar do presente, preservar o futuro.</p></div>
+            <div><h4 style="color:var(--ouro); margin-bottom:15px;">Menu</h4><p><a href="#home" style="color:#ccc; text-decoration:none;">Início</a> | <a href="#sobre" style="color:#ccc; text-decoration:none;">Sobre</a> | <a href="#servicos" style="color:#ccc; text-decoration:none;">Serviços</a> | <a href="#contato" style="color:#ccc; text-decoration:none;">Contato</a></p></div>
+            <div><h4 style="color:var(--ouro); margin-bottom:15px;">Redes Sociais</h4><div style="display:flex; gap:20px; justify-content:center;"><a href="#" style="color:#ccc; font-size:1.5rem;"><i class="fab fa-instagram"></i></a><a href="#" style="color:#ccc; font-size:1.5rem;"><i class="fab fa-linkedin"></i></a><a href="#" style="color:#ccc; font-size:1.5rem;"><i class="fab fa-facebook"></i></a></div></div>
         </div>
-        <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px;">© 2026 ALFA Soluções Ambientais. Todos os direitos reservados.</div>
+        <div style="text-align:center; border-top:1px solid rgba(212,175,55,0.2); padding-top:25px;">© 2026 ALFA Soluções Ambientais. Todos os direitos reservados.</div>
     </div>
 </footer>
 
@@ -959,8 +828,8 @@
         const filtrados = imagensGaleria.filter(img => filtro === 'all' || img.cat === filtro);
         filtrados.forEach((img) => {
             const div = document.createElement('div');
-            div.className = 'gallery-item-premium';
-            div.innerHTML = `<img src="${img.url}" alt="Galeria ALFA" loading="lazy"><div class="gallery-overlay"><i class="fas fa-search-plus" style="color:white; font-size:2rem;"></i></div>`;
+            div.className = 'gallery-item-luxo';
+            div.innerHTML = `<img src="${img.url}" alt="Galeria ALFA" loading="lazy">`;
             div.addEventListener('click', () => openLightbox(img.url.split('?')[0]));
             grid.appendChild(div);
         });
@@ -979,16 +848,22 @@
         lb.classList.add('active');
     }
 
-    document.querySelectorAll('.filter-btn-premium').forEach(btn => {
+    document.querySelectorAll('.filter-btn-luxo').forEach(btn => {
         btn.addEventListener('click', () => {
-            document.querySelectorAll('.filter-btn-premium').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+            document.querySelectorAll('.filter-btn-luxo').forEach(b => {
+                b.style.background = 'transparent';
+                b.style.color = '#ccc';
+                b.style.borderColor = 'rgba(212,175,55,0.3)';
+            });
+            btn.style.background = 'rgba(212,175,55,0.2)';
+            btn.style.borderColor = 'rgba(212,175,55,0.5)';
+            btn.style.color = 'white';
             renderGaleria(btn.dataset.filter);
         });
     });
     renderGaleria('all');
 
-    const counters = document.querySelectorAll('.stat-number-premium');
+    const counters = document.querySelectorAll('.stat-number-luxo');
     let counted = false;
     const observerStats = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1012,11 +887,12 @@
             }
         });
     }, { threshold: 0.5 });
-    observerStats.observe(document.querySelector('.stats-premium'));
+    observerStats.observe(document.querySelector('.stats-luxo'));
 
     let currentIdx = 0;
     const track = document.getElementById('carrosselTrack');
-    const total = document.querySelectorAll('.depoimento-premium').length;
+    const depoimentos = document.querySelectorAll('.depoimento-luxo');
+    const total = depoimentos.length;
     function updateCarrossel() { if(track) track.style.transform = `translateX(-${currentIdx * 100}%)`; }
     document.getElementById('nextDepo')?.addEventListener('click', () => { currentIdx = (currentIdx + 1) % total; updateCarrossel(); });
     document.getElementById('prevDepo')?.addEventListener('click', () => { currentIdx = (currentIdx - 1 + total) % total; updateCarrossel(); });
