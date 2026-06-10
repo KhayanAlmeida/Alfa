@@ -363,7 +363,7 @@
             margin-top: 100px;
         }
 
-        /* Hero Section - CORRIGIDA PARA CELULAR */
+        /* Hero Section */
         .hero-luxo {
             min-height: 100vh;
             position: relative;
@@ -385,7 +385,6 @@
             z-index: 1;
         }
 
-        /* Removido background-attachment: fixed - causa problemas no celular */
         .hero-slide.active {
             opacity: 1;
             z-index: 2;
@@ -578,6 +577,94 @@
 
         .indicator-ad:hover {
             background: var(--ouro);
+        }
+
+        /* Modal de WhatsApp */
+        .whatsapp-modal {
+            position: fixed;
+            bottom: 90px;
+            right: 25px;
+            width: 300px;
+            background: #1a1a1a;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-modal.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .whatsapp-modal-header {
+            background: linear-gradient(135deg, #075E54, #128C7E);
+            padding: 15px 20px;
+            border-radius: 20px 20px 0 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .whatsapp-modal-header i {
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .whatsapp-modal-header h3 {
+            color: white;
+            font-size: 1rem;
+        }
+
+        .whatsapp-modal-body {
+            padding: 15px;
+        }
+
+        .whatsapp-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            cursor: pointer;
+        }
+
+        .whatsapp-option:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--ouro);
+            transform: translateX(5px);
+        }
+
+        .whatsapp-option i {
+            font-size: 1.8rem;
+            color: #25D366;
+        }
+
+        .whatsapp-option-info h4 {
+            color: white;
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            color: white;
+            font-size: 1.3rem;
+            cursor: pointer;
+            background: none;
+            border: none;
         }
 
         /* Seção Sobre */
@@ -880,18 +967,19 @@
             text-decoration: none;
         }
 
+        /* WhatsApp Float Button */
         .whatsapp-float-btn {
             position: fixed;
             bottom: 20px;
             right: 20px;
             background: #25D366;
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: white;
             box-shadow: 0 5px 20px rgba(0,0,0,0.3);
             z-index: 99;
@@ -1180,6 +1268,11 @@
             .section-title-luxo {
                 margin-bottom: 30px;
             }
+            .whatsapp-modal {
+                width: 280px;
+                right: 15px;
+                bottom: 85px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1215,6 +1308,17 @@
             .orcamento-content {
                 padding: 25px;
             }
+            .whatsapp-modal {
+                width: 260px;
+                right: 10px;
+                bottom: 80px;
+            }
+            .whatsapp-option i {
+                font-size: 1.5rem;
+            }
+            .whatsapp-option-info h4 {
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -1245,7 +1349,7 @@
         <h4>SIGA-NOS</h4>
         <div class="social-icons-side">
             <a href="https://www.instagram.com/alfasolucoesambientais" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.facebook.com/share/18bTcKZpD2/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i></a>
         </div>
     </div>
 </div>
@@ -1429,13 +1533,41 @@
                 <h4 style="color:var(--ouro); margin-bottom:12px; font-size:0.9rem;">Redes Sociais</h4>
                 <div style="display:flex; gap:15px; justify-content:center;">
                     <a href="https://www.instagram.com/alfasolucoesambientais" target="_blank" style="color:#ccc; font-size:1.3rem;"><i class="fab fa-instagram"></i></a>
-                    <a href="https://facebook.com" target="_blank" style="color:#ccc; font-size:1.3rem;"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/share/18bTcKZpD2/?mibextid=wwXIfr" target="_blank" style="color:#ccc; font-size:1.3rem;"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
         <div style="text-align:center; border-top:1px solid rgba(212,175,55,0.2); padding-top:20px; font-size:0.7rem;">© 2026 ALFA Soluções Ambientais. Todos os direitos reservados.</div>
     </div>
 </footer>
+
+<!-- Modal de WhatsApp -->
+<div class="whatsapp-modal" id="whatsappModal">
+    <div class="whatsapp-modal-header">
+        <i class="fab fa-whatsapp"></i>
+        <h3>Fale com nossa equipe</h3>
+        <button class="close-modal" id="closeWhatsappModal">&times;</button>
+    </div>
+    <div class="whatsapp-modal-body">
+        <a href="https://wa.me/5515997752938?text=Olá%20Khayan!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20da%20ALFA%20Soluções%20Ambientais." class="whatsapp-option" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <div class="whatsapp-option-info">
+                <h4>Falar com o técnico Khayan</h4>
+            </div>
+        </a>
+        <a href="https://wa.me/5515996626052?text=Olá%20Samuel!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20da%20ALFA%20Soluções%20Ambientais." class="whatsapp-option" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <div class="whatsapp-option-info">
+                <h4>Falar com o técnico Samuel</h4>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- Botão WhatsApp Float -->
+<button class="whatsapp-float-btn" id="whatsappFloatBtn">
+    <i class="fab fa-whatsapp"></i>
+</button>
 
 <!-- Modal de Orçamento -->
 <div class="orcamento-modal" id="orcamentoModal">
@@ -1491,10 +1623,6 @@
     <i class="fas fa-check-circle"></i>
     <span>Orçamento enviado com sucesso!</span>
 </div>
-
-<button class="whatsapp-float-btn" id="whatsappFloatBtn">
-    <i class="fab fa-whatsapp"></i>
-</button>
 
 <script>
     // ==================== CARROSSEL DO HERO ====================
@@ -1650,6 +1778,44 @@
     updateCarrosselAD(0);
     startAutoSlideAD();
     
+    // ==================== MODAL DO WHATSAPP ====================
+    const whatsappFloatBtn = document.getElementById('whatsappFloatBtn');
+    const whatsappModal = document.getElementById('whatsappModal');
+    const closeWhatsappModal = document.getElementById('closeWhatsappModal');
+    
+    if (whatsappFloatBtn) {
+        whatsappFloatBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (whatsappModal) {
+                whatsappModal.classList.add('active');
+            }
+        });
+    }
+    
+    if (closeWhatsappModal) {
+        closeWhatsappModal.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (whatsappModal) {
+                whatsappModal.classList.remove('active');
+            }
+        });
+    }
+    
+    // Fechar modal ao clicar fora
+    document.addEventListener('click', function(e) {
+        if (whatsappModal && whatsappModal.classList.contains('active')) {
+            if (!whatsappModal.contains(e.target) && e.target !== whatsappFloatBtn) {
+                whatsappModal.classList.remove('active');
+            }
+        }
+    });
+    
+    if (whatsappModal) {
+        whatsappModal.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+    
     // ==================== OUTRAS FUNCIONALIDADES ====================
     const menuHamburger = document.getElementById('menuHamburger');
     const sideMenu = document.getElementById('sideMenu');
@@ -1785,13 +1951,6 @@
             if (orcamentoModal) orcamentoModal.classList.remove('active');
             formOrcamento.reset();
             document.body.style.overflow = '';
-        });
-    }
-
-    const whatsappFloatBtn = document.getElementById('whatsappFloatBtn');
-    if (whatsappFloatBtn) {
-        whatsappFloatBtn.addEventListener('click', () => {
-            window.open('https://wa.me/5515997752938?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20da%20ALFA%20Soluções%20Ambientais.', '_blank');
         });
     }
 
