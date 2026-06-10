@@ -6,7 +6,7 @@
     
     <!-- SEO -->
     <meta name="description" content="ALFA Soluções Ambientais - Excelência em recuperação ambiental, reflorestamento e conservação de áreas verdes. Solicite seu orçamento personalizado.">
-    <meta name="keywords" content="recuperação ambiental, reflorestamento, plantio de mudas, roçagem, limpeza de áreas, conservação ambiental, orçamento">
+    <meta name="keywords" content="recuperação ambiental, reflorestamento, plantio de mudas, roçagem, limpeza de áreas, conservação ambiental, paisagismo, orçamento">
     <meta name="author" content="ALFA Soluções Ambientais">
     <meta name="theme-color" content="#0B5D3B">
     
@@ -170,7 +170,7 @@
             box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
         }
 
-        /* Header */
+        /* Header - Logo Centralizada */
         header {
             position: fixed;
             top: 0;
@@ -184,85 +184,228 @@
 
         .navbar {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             padding: 15px 24px;
             max-width: 1400px;
             margin: 0 auto;
+            position: relative;
+        }
+
+        /* Menu Hamburguer - Canto Superior Esquerdo */
+        .menu-hamburger {
+            position: absolute;
+            left: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1002;
+            padding: 10px;
+        }
+
+        .menu-hamburger i {
+            font-size: 1.8rem;
+            color: var(--ouro);
+            transition: 0.3s;
+        }
+
+        .menu-hamburger:hover i {
+            color: var(--ouro-claro);
+        }
+
+        /* Logo Centralizada */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .logo-img {
             height: auto;
-            max-height: 75px;
+            max-height: 110px;
             width: auto;
             object-fit: contain;
             filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+            transition: transform 0.3s;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 45px;
-            list-style: none;
+        .logo-img:hover {
+            transform: scale(1.02);
         }
-        .nav-links a {
+
+        /* Menu Lateral */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 320px;
+            height: 100vh;
+            background: linear-gradient(135deg, #0a1a12 0%, #051008 100%);
+            z-index: 1001;
+            transition: left 0.4s ease;
+            box-shadow: 5px 0 25px rgba(0,0,0,0.5);
+            border-right: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 100px 30px 40px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .side-menu.active {
+            left: 0;
+        }
+
+        .side-menu .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--ouro);
+            cursor: pointer;
+            padding: 10px;
+            transition: 0.3s;
+        }
+
+        .side-menu .close-menu:hover {
+            color: var(--ouro-claro);
+            transform: rotate(90deg);
+        }
+
+        .side-nav-links {
+            list-style: none;
+            flex: 1;
+        }
+
+        .side-nav-links li {
+            margin-bottom: 30px;
+        }
+
+        .side-nav-links a {
             text-decoration: none;
             color: #e0e0e0;
             font-weight: 500;
             transition: 0.3s;
-            font-size: 0.9rem;
+            font-size: 1.2rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             position: relative;
+            display: inline-block;
+            padding-bottom: 8px;
         }
-        .nav-links a::before {
+
+        .side-nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: 0;
             left: 0;
             width: 0;
-            height: 1px;
+            height: 2px;
             background: var(--ouro);
             transition: width 0.3s;
         }
-        .nav-links a:hover::before {
+
+        .side-nav-links a:hover {
+            color: var(--ouro);
+        }
+
+        .side-nav-links a:hover::after {
             width: 100%;
         }
-        .nav-links a:hover {
-            color: var(--ouro);
+
+        /* Redes Sociais no Menu */
+        .side-social {
+            margin-top: auto;
+            padding-top: 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            text-align: center;
         }
-        .menu-mobile {
-            display: none;
-            font-size: 1.8rem;
-            cursor: pointer;
+
+        .side-social h4 {
             color: var(--ouro);
-            background: none;
-            border: none;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+        .social-icons-side {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .social-icons-side a {
+            color: #ccc;
+            font-size: 1.8rem;
+            transition: 0.3s;
+        }
+
+        .social-icons-side a:hover {
+            color: var(--ouro);
+            transform: translateY(-3px);
+        }
+
+        /* Overlay para fechar menu */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
 
         main {
-            margin-top: 105px;
+            margin-top: 140px;
         }
 
-        /* Hero Section */
+        /* Hero Section com Carrossel */
         .hero-luxo {
             min-height: 100vh;
-            background: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1600&q=100');
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            position: relative;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            z-index: 1;
         }
 
-        .hero-luxo::before {
+        .hero-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .hero-slide::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 100%);
+            background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 100%);
             pointer-events: none;
         }
 
@@ -275,11 +418,12 @@
             height: 150px;
             background: linear-gradient(to top, #0a1a12, transparent);
             pointer-events: none;
+            z-index: 3;
         }
 
         .hero-content-luxo {
             position: relative;
-            z-index: 2;
+            z-index: 10;
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
@@ -303,6 +447,7 @@
             margin-bottom: 25px;
             line-height: 1.2;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+            min-height: 140px;
         }
 
         .hero-content-luxo p {
@@ -318,6 +463,47 @@
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
+        }
+
+        /* Efeito de Digitação */
+        .typing-text {
+            display: inline-block;
+            border-right: 3px solid var(--ouro);
+            animation: blink 0.7s step-end infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { border-color: var(--ouro); }
+            50% { border-color: transparent; }
+        }
+
+        /* Indicadores do Carrossel */
+        .carousel-indicators {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 10;
+        }
+
+        .indicator {
+            width: 40px;
+            height: 4px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .indicator.active {
+            background: var(--ouro);
+            width: 60px;
+        }
+
+        .indicator:hover {
+            background: var(--ouro);
         }
 
         /* Modal de Orçamento */
@@ -467,6 +653,36 @@
             box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
         }
 
+        /* Toast de Sucesso */
+        .toast-success {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            z-index: 3000;
+            opacity: 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1rem;
+        }
+
+        .toast-success.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .toast-success i {
+            font-size: 1.5rem;
+        }
+
         /* Seção Sobre */
         .sobre-luxo {
             background: linear-gradient(135deg, #0d2218 0%, #08140f 100%);
@@ -497,14 +713,6 @@
 
         .section-title-luxo span {
             color: var(--ouro);
-        }
-
-        .section-title-luxo::after {
-            content: '✦';
-            font-size: 2rem;
-            color: var(--ouro);
-            display: block;
-            margin-top: 15px;
         }
 
         .sobre-grid-luxo {
@@ -872,115 +1080,6 @@
             text-decoration: none;
         }
 
-        /* Modal de WhatsApp */
-        .whatsapp-modal {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            width: 320px;
-            background: #1a1a1a;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(20px);
-            transition: all 0.3s ease;
-        }
-
-        .whatsapp-modal.active {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .whatsapp-modal-header {
-            background: linear-gradient(135deg, #075E54, #128C7E);
-            padding: 20px;
-            border-radius: 20px 20px 0 0;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .whatsapp-modal-header i {
-            font-size: 2rem;
-            color: white;
-        }
-
-        .whatsapp-modal-header h3 {
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .whatsapp-modal-body {
-            padding: 15px;
-        }
-
-        .whatsapp-option {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 15px;
-            margin-bottom: 12px;
-            text-decoration: none;
-            transition: all 0.3s;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            cursor: pointer;
-        }
-
-        .whatsapp-option:hover {
-            background: rgba(212, 175, 55, 0.1);
-            border-color: var(--ouro);
-            transform: translateX(5px);
-        }
-
-        .whatsapp-option i {
-            font-size: 2rem;
-            color: #25D366;
-        }
-
-        .whatsapp-option-info h4 {
-            color: white;
-            font-size: 1rem;
-            margin-bottom: 3px;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            background: none;
-            border: none;
-        }
-
-        /* Footer */
-        .footer-luxo {
-            background: #030605;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 50px 0 30px;
-        }
-
-        .footer-grid-luxo {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .footer-logo-luxo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            color: var(--ouro);
-        }
-
         /* WhatsApp Float Button */
         .whatsapp-float-btn {
             position: fixed;
@@ -1042,6 +1141,27 @@
             cursor: pointer;
         }
 
+        /* Footer */
+        .footer-luxo {
+            background: #030605;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 50px 0 30px;
+        }
+
+        .footer-grid-luxo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .footer-logo-luxo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--ouro);
+        }
+
         /* Responsivo */
         @media (max-width: 1024px) {
             .contato-grid-luxo {
@@ -1051,6 +1171,15 @@
             .sobre-grid-luxo {
                 gap: 40px;
             }
+            .side-menu {
+                width: 280px;
+            }
+            .logo-img {
+                max-height: 90px;
+            }
+            main {
+                margin-top: 110px;
+            }
         }
 
         @media (max-width: 900px) {
@@ -1058,32 +1187,19 @@
                 padding: 12px 20px;
             }
             .logo-img {
-                max-height: 50px;
+                max-height: 70px;
             }
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                background: #0a1a12;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                padding: 25px;
-                text-align: center;
-                gap: 20px;
-                border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            .menu-hamburger {
+                left: 16px;
             }
-            .nav-links.active {
-                display: flex;
-            }
-            .menu-mobile {
-                display: block;
+            .menu-hamburger i {
+                font-size: 1.5rem;
             }
             .sobre-grid-luxo {
                 grid-template-columns: 1fr;
             }
             main {
-                margin-top: 80px;
+                margin-top: 90px;
             }
             .contato-card-luxo {
                 padding: 30px;
@@ -1096,14 +1212,15 @@
                 flex-direction: column;
                 align-items: center;
             }
-            .whatsapp-modal {
-                width: 280px;
-                right: 20px;
-                bottom: 90px;
-            }
             .orcamento-content {
                 padding: 30px 20px;
                 width: 95%;
+            }
+            .carousel-indicators {
+                bottom: 60px;
+            }
+            .indicator {
+                width: 30px;
             }
         }
 
@@ -1126,10 +1243,31 @@
             .depoimento-luxo p {
                 font-size: 0.95rem;
             }
-            .whatsapp-modal {
+            .toast-success {
+                font-size: 0.85rem;
+                padding: 12px 20px;
+                white-space: nowrap;
+            }
+            .side-menu {
                 width: 260px;
-                right: 15px;
-                bottom: 80px;
+            }
+            .side-nav-links a {
+                font-size: 1rem;
+            }
+            .logo-img {
+                max-height: 55px;
+            }
+            main {
+                margin-top: 75px;
+            }
+            .carousel-indicators {
+                bottom: 50px;
+            }
+            .indicator {
+                width: 25px;
+            }
+            .hero-content-luxo h1 {
+                min-height: 120px;
             }
         }
     </style>
@@ -1138,33 +1276,65 @@
 
 <header>
     <div class="navbar">
+        <!-- Menu Hamburguer - Canto Superior Esquerdo -->
+        <button class="menu-hamburger" id="menuHamburger">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <!-- Logo Centralizada -->
         <div class="logo-container">
-            <img class="logo-img" src="https://i.ibb.co/Y7jXycVP/Chat-GPT-Image-7-de-jun-de-2026-13-56-57.png" alt="ALFA Soluções Ambientais">
+            <img class="logo-img" src="https://i.ibb.co/jvGSbVbz/Design-sem-nome-7.png" alt="ALFA Soluções Ambientais">
         </div>
-        <button class="menu-mobile" id="menuToggle"><i class="fas fa-bars"></i></button>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Início</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#galeria">Galeria</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
     </div>
 </header>
 
+<!-- Menu Lateral -->
+<div class="side-menu" id="sideMenu">
+    <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
+    <ul class="side-nav-links">
+        <li><a href="#home">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#contato">Contato</a></li>
+    </ul>
+    <div class="side-social">
+        <h4>SIGA-NOS</h4>
+        <div class="social-icons-side">
+            <a href="https://www.instagram.com/alfasolucoesambientais" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- Overlay -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
 <main>
-    <!-- Hero -->
+    <!-- Hero Section com Carrossel -->
     <section id="home" class="hero-luxo">
+        <!-- Slides -->
+        <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1600&q=100');"></div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1600&q=100');"></div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1600&q=100');"></div>
+        
         <div class="container">
             <div class="hero-content-luxo">
-                <div class="hero-subtitle">✦ SUSTENTABILIDADE COM EXCELÊNCIA ✦</div>
-                <h1>Recuperação Ambiental<br><span style="color: var(--ouro);">& Conservação de Áreas</span></h1>
+                <div class="hero-subtitle">SUSTENTABILIDADE COM EXCELÊNCIA</div>
+                <h1 id="heroTitle">Recuperação Ambiental<br><span style="color: var(--ouro);">& Conservação de Áreas</span></h1>
                 <p>Soluções completas em recuperação ambiental, reflorestamento, plantio de mudas nativas, roçagem e manutenção de áreas verdes.</p>
                 <div class="hero-buttons">
                     <button class="btn-orcamento" id="btnOrcamentoHero"><i class="fas fa-calculator" style="margin-right: 10px;"></i>Faça seu orçamento</button>
                     <a href="#servicos" class="btn-outline-luxo">Nossos Serviços</a>
                 </div>
             </div>
+        </div>
+        
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+            <div class="indicator active" data-slide="0"></div>
+            <div class="indicator" data-slide="1"></div>
+            <div class="indicator" data-slide="2"></div>
         </div>
     </section>
 
@@ -1302,9 +1472,8 @@
             <div>
                 <h4 style="color:var(--ouro); margin-bottom:15px;">Redes Sociais</h4>
                 <div style="display:flex; gap:20px; justify-content:center;">
-                    <a href="#" style="color:#ccc; font-size:1.5rem;"><i class="fab fa-instagram"></i></a>
-                    <a href="#" style="color:#ccc; font-size:1.5rem;"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" style="color:#ccc; font-size:1.5rem;"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/alfasolucoesambientais" target="_blank" style="color:#ccc; font-size:1.5rem;"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank" style="color:#ccc; font-size:1.5rem;"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -1321,33 +1490,34 @@
         
         <form id="formOrcamento">
             <div class="form-group">
-                <label><i class="fas fa-user" style="margin-right: 8px;"></i> Nome completo</label>
+                <label><i class="fas fa-user" style="margin-right: 8px;"></i> Nome completo *</label>
                 <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
             </div>
             
             <div class="form-group">
-                <label><i class="fas fa-phone-alt" style="margin-right: 8px;"></i> Telefone</label>
+                <label><i class="fas fa-phone-alt" style="margin-right: 8px;"></i> Telefone *</label>
                 <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
             </div>
             
             <div class="form-group">
-                <label><i class="fas fa-envelope" style="margin-right: 8px;"></i> E-mail</label>
+                <label><i class="fas fa-envelope" style="margin-right: 8px;"></i> E-mail *</label>
                 <input type="email" id="email" name="email" placeholder="seu@email.com" required>
             </div>
             
             <div class="form-group">
-                <label><i class="fas fa-chart-line" style="margin-right: 8px;"></i> Quantidade de m²</label>
+                <label><i class="fas fa-chart-line" style="margin-right: 8px;"></i> Quantidade de m² *</label>
                 <input type="number" id="metros" name="metros" placeholder="Ex: 500" required>
             </div>
             
             <div class="form-group">
-                <label><i class="fas fa-tools" style="margin-right: 8px;"></i> Serviço desejado</label>
+                <label><i class="fas fa-tools" style="margin-right: 8px;"></i> Serviço desejado *</label>
                 <select id="servico" name="servico" required>
                     <option value="">Selecione um serviço</option>
                     <option value="Plantio de mudas">🌱 Plantio de mudas</option>
                     <option value="Roçada">🌿 Roçada</option>
                     <option value="Limpeza de terreno">🧹 Limpeza de terreno</option>
                     <option value="Manutenção de área verde">🌳 Manutenção de área verde</option>
+                    <option value="Paisagismo">✂️🌿 Paisagismo</option>
                 </select>
             </div>
             
@@ -1361,27 +1531,10 @@
     </div>
 </div>
 
-<!-- Modal de WhatsApp -->
-<div class="whatsapp-modal" id="whatsappModal">
-    <div class="whatsapp-modal-header">
-        <i class="fab fa-whatsapp"></i>
-        <h3>Fale com nossa equipe</h3>
-        <button class="close-modal" id="closeModal">&times;</button>
-    </div>
-    <div class="whatsapp-modal-body">
-        <a href="https://wa.me/5515997752938?text=Olá%20Khayan!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20da%20ALFA%20Soluções%20Ambientais." class="whatsapp-option" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-            <div class="whatsapp-option-info">
-                <h4>Falar com o técnico Khayan</h4>
-            </div>
-        </a>
-        <a href="https://wa.me/5515996626052?text=Olá%20Samuel!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20da%20ALFA%20Soluções%20Ambientais." class="whatsapp-option" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-            <div class="whatsapp-option-info">
-                <h4>Falar com o técnico Samuel</h4>
-            </div>
-        </a>
-    </div>
+<!-- Toast de Sucesso -->
+<div class="toast-success" id="toastSuccess">
+    <i class="fas fa-check-circle"></i>
+    <span>Orçamento enviado com sucesso!</span>
 </div>
 
 <!-- Botão WhatsApp Float -->
@@ -1390,6 +1543,132 @@
 </button>
 
 <script>
+    // ==================== CARROSSEL DE IMAGENS ====================
+    const slides = document.querySelectorAll('.hero-slide');
+    const indicators = document.querySelectorAll('.indicator');
+    let currentSlide = 0;
+    let slideInterval;
+    
+    // Textos para cada slide
+    const slideTexts = [
+        "Recuperação Ambiental<br><span style=\"color: var(--ouro);\">& Conservação de Áreas</span>",
+        "",  // Será preenchido dinamicamente com o efeito de digitação
+        "Sustentabilidade<br><span style=\"color: var(--ouro);\">para as futuras gerações</span>"
+    ];
+    
+    const heroTitle = document.getElementById('heroTitle');
+    let typingInterval = null;
+    let isTypingOnSlide2 = false;
+    
+    // Função para iniciar a digitação no slide 2
+    function startTypingAnimation() {
+        if (typingInterval) clearInterval(typingInterval);
+        
+        const textToType = "Alfa Soluções Ambientais";
+        let charIndex = 0;
+        heroTitle.innerHTML = '<span class="typing-text"></span>';
+        const typingSpan = heroTitle.querySelector('.typing-text');
+        
+        typingInterval = setInterval(() => {
+            if (charIndex <= textToType.length) {
+                typingSpan.textContent = textToType.substring(0, charIndex);
+                charIndex++;
+            } else {
+                clearInterval(typingInterval);
+                typingInterval = null;
+                // Remover o cursor piscante após completar
+                typingSpan.style.borderRight = 'none';
+            }
+        }, 100);
+    }
+    
+    // Função para parar a digitação
+    function stopTypingAnimation() {
+        if (typingInterval) {
+            clearInterval(typingInterval);
+            typingInterval = null;
+        }
+    }
+    
+    function changeSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(ind => ind.classList.remove('active'));
+        
+        slides[index].classList.add('active');
+        indicators[index].classList.add('active');
+        currentSlide = index;
+        
+        // Gerenciar o texto do título baseado no slide
+        stopTypingAnimation();
+        
+        if (index === 1) {
+            // Slide 2: inicia a digitação
+            heroTitle.innerHTML = '';
+            startTypingAnimation();
+        } else {
+            // Outros slides: texto fixo
+            heroTitle.innerHTML = slideTexts[index];
+        }
+    }
+    
+    function nextSlide() {
+        let next = (currentSlide + 1) % slides.length;
+        changeSlide(next);
+    }
+    
+    function startSlideInterval() {
+        if (slideInterval) clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 15000);
+    }
+    
+    // Event listeners para indicadores
+    indicators.forEach((indicator, idx) => {
+        indicator.addEventListener('click', () => {
+            changeSlide(idx);
+            startSlideInterval();
+        });
+    });
+    
+    // Iniciar carrossel
+    startSlideInterval();
+    
+    // Pausar carrossel ao passar o mouse
+    const heroSection = document.querySelector('.hero-luxo');
+    heroSection.addEventListener('mouseenter', () => {
+        if (slideInterval) clearInterval(slideInterval);
+    });
+    
+    heroSection.addEventListener('mouseleave', () => {
+        startSlideInterval();
+    });
+    
+    // ==================== OUTRAS FUNCIONALIDADES ====================
+    // Menu Lateral
+    const menuHamburger = document.getElementById('menuHamburger');
+    const sideMenu = document.getElementById('sideMenu');
+    const closeMenu = document.getElementById('closeMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    function openMenu() {
+        sideMenu.classList.add('active');
+        menuOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenuFunction() {
+        sideMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    menuHamburger.addEventListener('click', openMenu);
+    closeMenu.addEventListener('click', closeMenuFunction);
+    menuOverlay.addEventListener('click', closeMenuFunction);
+
+    document.querySelectorAll('.side-nav-links a').forEach(link => {
+        link.addEventListener('click', closeMenuFunction);
+    });
+
     // Imagens da Galeria
     const imagensGaleria = [
         { url: 'https://i.ibb.co/jZ69YzJB/Whats-App-Image-2026-06-07-at-17-25-17-1.jpg?format=original&h=2000', cat: 'plantio' },
@@ -1440,7 +1719,6 @@
         lb.classList.add('active');
     }
 
-    // Filtros da Galeria
     document.querySelectorAll('.filter-btn-luxo').forEach(btn => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.filter-btn-luxo').forEach(b => {
@@ -1452,7 +1730,6 @@
     });
     renderGaleria('all');
 
-    // Contadores Animados
     const counters = document.querySelectorAll('.stat-number-luxo');
     let counted = false;
     const observerStats = new IntersectionObserver((entries) => {
@@ -1479,7 +1756,6 @@
     }, { threshold: 0.5 });
     if(document.querySelector('.stats-luxo')) observerStats.observe(document.querySelector('.stats-luxo'));
 
-    // Carrossel de Depoimentos
     let currentIdx = 0;
     const track = document.getElementById('carrosselTrack');
     const total = document.querySelectorAll('.depoimento-luxo').length;
@@ -1495,11 +1771,11 @@
         updateCarrossel(); 
     });
 
-    // Modal de Orçamento
     const orcamentoModal = document.getElementById('orcamentoModal');
     const btnOrcamentoHero = document.getElementById('btnOrcamentoHero');
     const closeOrcamento = document.getElementById('closeOrcamento');
     const formOrcamento = document.getElementById('formOrcamento');
+    const toastSuccess = document.getElementById('toastSuccess');
 
     if (btnOrcamentoHero) {
         btnOrcamentoHero.addEventListener('click', () => {
@@ -1513,18 +1789,22 @@
         });
     }
 
-    // Fechar modal ao clicar fora
     orcamentoModal.addEventListener('click', (e) => {
         if (e.target === orcamentoModal) {
             orcamentoModal.classList.remove('active');
         }
     });
 
-    // Envio do formulário
+    function showToast() {
+        toastSuccess.classList.add('show');
+        setTimeout(() => {
+            toastSuccess.classList.remove('show');
+        }, 3000);
+    }
+
     formOrcamento.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        // Coletar dados do formulário
         const nome = document.getElementById('nome').value;
         const telefone = document.getElementById('telefone').value;
         const email = document.getElementById('email').value;
@@ -1532,70 +1812,32 @@
         const servico = document.getElementById('servico').value;
         const mensagem = document.getElementById('mensagem').value;
         
-        // Construir mensagem para WhatsApp
-        const textoWhatsApp = `📋 *NOVO ORÇAMENTO - ALFA SOLUÇÕES AMBIENTAIS*%0A%0A👤 *Nome:* ${nome}%0A📞 *Telefone:* ${telefone}%0A✉️ *E-mail:* ${email}%0A📏 *Área:* ${metros} m²%0A🛠️ *Serviço:* ${servico}%0A💬 *Mensagem:* ${mensagem || 'Não informado'}%0A%0A🔹 *Solicitação enviada pelo site ALFA Ambiental*`;
+        if (!nome || !telefone || !email || !metros || !servico) {
+            alert('Por favor, preencha todos os campos obrigatórios.');
+            return;
+        }
         
-        // Abrir WhatsApp com os dados (enviar para Khayan)
-        window.open(`https://wa.me/5515997752938?text=${textoWhatsApp}`, '_blank');
+        const mailtoLink = `mailto:solucoesambientaisalfa@gmail.com?subject=Novo Orçamento - ${nome}&body=Nome: ${nome}%0ATelefone: ${telefone}%0AE-mail: ${email}%0AÁrea: ${metros} m²%0AServiço: ${servico}%0AMensagem: ${mensagem || 'Não informado'}`;
         
-        // Fechar modal
+        window.location.href = mailtoLink;
+        showToast();
         orcamentoModal.classList.remove('active');
-        
-        // Limpar formulário
         formOrcamento.reset();
-        
-        // Opcional: mostrar mensagem de sucesso
-        alert('Orçamento enviado com sucesso! Em breve entraremos em contato.');
     });
 
-    // WhatsApp Modal
     const whatsappFloatBtn = document.getElementById('whatsappFloatBtn');
-    const whatsappModal = document.getElementById('whatsappModal');
-    const closeModalBtn = document.getElementById('closeModal');
-
-    if (whatsappFloatBtn && whatsappModal) {
-        whatsappFloatBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            whatsappModal.classList.add('active');
-        });
-
-        if (closeModalBtn) {
-            closeModalBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                whatsappModal.classList.remove('active');
-            });
-        }
-
-        document.addEventListener('click', function(e) {
-            if (whatsappModal.classList.contains('active')) {
-                if (!whatsappModal.contains(e.target) && e.target !== whatsappFloatBtn) {
-                    whatsappModal.classList.remove('active');
-                }
-            }
-        });
-
-        whatsappModal.addEventListener('click', function(e) {
-            e.stopPropagation();
+    if (whatsappFloatBtn) {
+        whatsappFloatBtn.addEventListener('click', () => {
+            window.open('https://wa.me/5515997752938?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20da%20ALFA%20Soluções%20Ambientais.', '_blank');
         });
     }
 
-    // Menu Mobile
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-    if(menuToggle) {
-        menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-    }
-    
-    // Scroll Suave
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if(target && this.getAttribute('href') !== '#') {
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-            if(navLinks && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
             }
         });
     });
